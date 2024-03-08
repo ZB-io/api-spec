@@ -1,0 +1,11 @@
+200,400_code,400_message,400_headers,404_code,404_message,404_headers,422_code,422_message,422_headers
+No response headers,error101,Data not found,No response headers,error404,Not found,No response headers,error422,Unprocessable entity,No response headers
+No response headers,error102,Data invalid,No response headers,error405,Not permitted,No response headers,error423,Locked,No response headers
+No response headers,error103,Missing field,No response headers,error406,Not acceptable,No response headers,error424,Failed dependency,No response headers
+No response headers,error104,Bad request,No response headers,error407,Proxy auth required,No response headers,error425,Too early,No response headers
+No response headers,error105,Unauthorized,No response headers,error408,Request timeout,No response headers,error426,Upgrade required,No response headers
+No response headers,error106,Payment required,No response headers,error409,Conflict,No response headers,error427,Precondition required,No response headers
+No response headers,error107,Forbidden,No response headers,error410,Gone,No response headers,error428,Too many requests,No response headers
+No response headers,error108,Not found,No response headers,error411,Length required,No response headers,error429,Request header fields too large,No response headers
+No response headers,error109,Method not allowed,No response headers,error412,Precondition failed,No response headers,error430,Unavailable for legal reasons,No response headers
+No response headers,error110,Not acceptable,No response headers,error413,Payload too large,No response headers,error431,Expectation failed,No response headers
