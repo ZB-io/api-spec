@@ -1,0 +1,11 @@
+200,400_code,400_message,400_headers,404_code,404_message,404_headers,422_code,422_message,422_headers
+No response headers,ERROR400,Not Found,No response headers,ERROR404,Unauthorized,No response headers,ERROR422,Unprocessable Entity,No response headers
+No response headers,ERROR400,Bad Request,No response headers,ERROR404,Not Found,No response headers,ERROR422,Forbidden,No response headers
+No response headers,ERROR400,Unprocessable Entity,No response headers,ERROR404,Bad Request,No response headers,ERROR422,Not Found,No response headers
+No response headers,ERROR400,Forbidden,No response headers,ERROR404,Unprocessable Entity,No response headers,ERROR422,Bad Request,No response headers
+No response headers,ERROR400,Unauthorized,No response headers,ERROR404,Forbidden,No response headers,ERROR422,Unauthorized,No response headers
+No response headers,ERROR400,Not Found,No response headers,ERROR404,Unauthorized,No response headers,ERROR422,Forbidden,No response headers
+No response headers,ERROR400,Bad Request,No response headers,ERROR404,Not Found,No response headers,ERROR422,Unprocessable Entity,No response headers
+No response headers,ERROR400,Unprocessable Entity,No response headers,ERROR404,Bad Request,No response headers,ERROR422,Not Found,No response headers
+No response headers,ERROR400,Forbidden,No response headers,ERROR404,Unprocessable Entity,No response headers,ERROR422,Bad Request,No response headers
+No response headers,ERROR400,Unauthorized,No response headers,ERROR404,Forbidden,No response headers,ERROR422,Unauthorized,No response headers
