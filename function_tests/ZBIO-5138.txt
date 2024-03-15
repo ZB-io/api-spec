@@ -1,0 +1,51 @@
+**Functional Test Cases**
+
+1. **Credit Card Due Reminder**
+   - Input: Credit Card Due Date is set to 10/04/2023
+   - Expected output: Reminder notification is sent on 09/04/2023
+   - Edge case: Reminder should be sent even if the due date falls on a weekend or holiday.
+
+2. **Overdue Balance Alert**
+   - Input: The current date is 11/04/2023, and the due date was 10/04/2023
+   - Expected output: Overdue balance alert is sent on 11/04/2023
+   - Edge case: Alert should be sent even if the system encounters a high volume of alerts to be sent out.
+
+3. **Collection Notification**
+   - Input: Account has been delinquent for a significant period (e.g., 60 days past due)
+   - Expected output: Collection notification is sent detailing the amount owed and additional charges
+   - Edge case: Notification should not be sent if the account's delinquency status has been mistakenly classified due to a system error.
+
+4. **Payment Plan Proposal**
+   - Input: Cardholder communicates inability to pay the full overdue balance
+   - Expected output: A payment plan proposal is presented to the cardholder
+   - Edge case: Payment plan should not be offered to cardholders who have a history of rejecting or failing to comply with previous payment plans.
+
+5. **Collection Agency Involvement**
+   - Input: Cardholder has not responded to collection notifications within the set timeframe (e.g., 90 days past due)
+   - Expected output: A collection agency is involved in the process
+   - Edge case: Ensure the collection agency is only involved after all internal collection efforts have been exhausted.
+
+6. **Legal Action Initiation**
+   - Input: Cardholder defaults on payment for an extended period (e.g., 180 days past due)
+   - Expected output: Legal action is initiated against the cardholder
+   - Edge case: Legal action should only be initiated after verifying that all other collection efforts have been unsuccessful and all regulatory requirements for such action have been met.
+
+**Non-Functional Test Cases**
+
+1. **Performance Testing**
+   - Test the system's ability to send a large number of notifications within a specified timeframe without performance degradation.
+
+2. **Usability Testing**
+   - Evaluate the clarity and understandability of notification messages sent to cardholders.
+
+3. **Security Testing**
+   - Ensure that the system securely handles cardholder data during the notification and collection process.
+
+4. **Compatibility Testing**
+   - Verify that notifications are correctly formatted and delivered across various email clients and devices.
+
+5. **Recovery Testing**
+   - Simulate system failures to test the system's ability to recover and continue sending notifications without data loss.
+
+6. **Reliability Testing**
+   - Assess the system's consistency in sending notifications as scheduled over an extended period.
