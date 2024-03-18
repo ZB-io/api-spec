@@ -1,0 +1,57 @@
+Functional Test cases:
+
+1. Verify the User Registration Functionality
+    - Input: User provides required information - name, email, password
+    - Expected Output: User registration is successful and the user is able to login
+    - Edge Cases: Incorrect inputs provided, duplicate user registration, 
+
+2. Verify the Consent and Authorization functionality
+    - Input: User logs in and authorizes data access
+    - Expected Output: User is able to grant permissions for app to access financial information
+    - Edge Cases: User doesn't allow permissions 
+
+3. Verify the Accessing of Financial Details functionality
+    - Input: Open banking APIs fetch user financial data
+    - Expected Output: System retrieves user's bank and credit card details - due dates, balances, minimum payment information and credit limits
+    - Edge Cases: Incorrect api implementation, unavailability of details from the provided bank links
+
+4. Verify the Consolidated Dashboard functionality 
+    - Input: System collects necessary data and creates a trackable dashboard 
+    - Expected Output: The app provides user specific data consisting of all bank and credit record
+    - Edge Cases: Unavailability of bank or credit data, internet unavailability
+
+5. Verify the Payment Scheduling and Automation functionality
+    - Input: User schedules monthly auto-payments
+    - Expected Output: App successfully schedules monthly auto-payments 
+    - Edge Cases: Failure of payment, lack of funds
+
+6. Verify the Payment Confirmation Alert Functionality
+    - Input: After each auto-payment is done
+    - Expected Output: User receives a successful auto-payment confirmation notification and upcoming payment alerts
+    - Edge Cases: Disabled notifications, internet unavailability
+
+Non Functional Test cases:
+
+1. Verify the Performance
+   - Input: Increase in the number of transactions
+   - Expected Output: Application should be able to handle the load and perform smoothly
+
+2. Verify the Accessibility
+   - Input: Various accessibility features
+   - Expected Output: All features should be easy to access and perform well 
+
+3. Verify the Security protocols 
+   - Input: User registration, data storage, and transactions
+   - Expected Output: All encrypted data should be securely stored and transactions should not be hacked
+
+4. Verify Good User Experience Design
+   - Input: User navigates through the system
+   - Expected Output: User interface should be intuitive; easy to use 
+
+5. Verify the Compatibility 
+   - Input: Use of the application on different devices 
+   - Expected Output: The application should be accessible on different platforms (android, iOS) 
+
+6. Verify the system handles disconnections gracefully 
+   - Input: Unstable internet connection during transaction
+   - Expected Output: The transaction process should be stopped and retried after reconnection, alert on transaction status should be sent

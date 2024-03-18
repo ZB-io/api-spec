@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: User Registration API
+  version: 1.0.0
+servers:
+  - url: https://{baseURL}
+    description: API server
+paths:
+  /user/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+              required:
+                - name
+                - email
+                - password
+      responses:
+        '201':
+          description: User registration successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User registration successful
+        '400':
+          description: Invalid user details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Invalid user details
+        '409':
+          description: User already exists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User already exists
+components:
+  securitySchemes:
+    UserAuth:
+      type: http
+      scheme: basic
+security:
+  - UserAuth: []
