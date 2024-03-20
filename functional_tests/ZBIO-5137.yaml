@@ -1,0 +1,156 @@
+openapi: 3.0.0
+info:
+  title: Credit Card Management System
+  version: 1.0.0
+  description: API specification for a credit card management system
+
+servers:
+  - url: https://api.creditcard.com/v1
+
+paths:
+  /credit-cards/{cardNumber}:
+    get:
+      summary: Retrieve credit card due date and balance
+      parameters:
+        - in: path
+          name: cardNumber
+          schema:
+            type: string
+          required: true
+          description: The credit card number
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/CreditCardDetails'
+        '404':
+          description: Credit card not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              
+  /credit-cards/{cardNumber}/balance:
+    get:
+      summary: Retrieve unpaid and overdue balance
+      parameters:
+        - in: path
+          name: cardNumber
+          schema:
+            type: string
+          required: true
+          description: The credit card number
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceDetails'
+        '404':
+          description: Credit card not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+  /credit-cards/{cardNumber}/payment:
+    post:
+      summary: Collect payment for balance
+      parameters:
+        - in: path
+          name: cardNumber
+          schema:
+            type: string
+          required: true
+          description: The credit card number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentDetails'
+      responses:
+        '200':
+          description: Successful payment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentResponse'
+        '400':
+          description: Invalid payment details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+                
+components:
+  schemas:
+    CreditCardDetails:
+      type: object
+      properties:
+        cardNumber:
+          type: string
+        dueDate:
+          type: string
+          format: date
+        balance:
+          type: number
+          format: float
+          
+    BalanceDetails:
+      type: object
+      properties:
+        cardNumber:
+          type: string
+        unpaidBalance:
+          type: number
+          format: float
+        overdueBalance:
+          type: number
+          format: float
+          
+    PaymentDetails:
+      type: object
+      properties:
+        cardNumber:
+          type: string
+        paymentAmount:
+          type: number
+          format: float
+        
+    PaymentResponse:
+      type: object
+      properties:
+        transactionId:
+          type: string
+        newBalance:
+          type: number
+          format: float
+          
+    ErrorResponse:
+      type: object
+      properties:
+        errorCode:
+          type: integer
+        errorMessage:
+          type: string
