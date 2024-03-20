@@ -1,0 +1,49 @@
+**Functional Test Cases**
+
+1. **Credit Card Due Reminder**
+   - Input: The system has saved credit card due date as 01/12/2022
+   - Expected Output: Reminder should be sent to cardholder on 30/11/2022 (a day before due date)
+  
+2. **Overdue Balance Alert**
+   - Input: The system shows the card payment not done and today's date is 02/12/2022 (1 day past due)
+   - Expected Output: System should send an alert stating overdue balance on 02/12/2022
+
+3. **Collection Notification**
+   - Input: System identifies an account with more than 60 days past due
+   - Expected Output: System should send a collection notification to the respective cardholder reveals overdue balance, late fine and necessary actions
+
+4. **Payment Plan Proposal**
+   - Input: Cardholder gets in touch with the bank unable to pay full overdue balance
+   - Expected Output: Propose a payment plan immediately with manageable terms such as feasible monthly installments, lowered interest, and no late fine
+
+5. **Collection Agency Involvement**
+   - Input: System detects cardholder's three failed attempts to respond to notifications and reminders of overdue balance
+   - Expected Output: System triggers process to involve a collection agency 
+  
+6. **Legal Action Initiation**
+   - Input: System detects chronic non-payment behavior from the cardholder
+   - Expected Output: Initiate stringent legal actions to recover the overdue balance
+  
+
+**Non-Functional Test Cases**
+
+1. **Performance Testing**
+   - Ensure the application's performance under load, the application should be able to handle large number of users at a time.
+  
+2. **Usability Testing**
+   - Ensure the application is user-friendly, intuitive and easy to navigate. The notification messages should be easy to understand.
+  
+3. **Security Testing**
+   - Validate the security features of the application, ensure it complies with all major security standards. Ensure secure transmission of sensitive user data during interaction.
+   
+4. **Compatibility Testing**
+   - The application should be compatible and responsive to different devices – desktops, tablets and mobiles.
+   
+5. **Reliability Testing**
+   - Ensure the application can perform under provided conditions for a certain period of time.
+  
+6. **Recovery Testing**
+   - The application should be able to recover from potential crashes or hardware failures and retain data integrity.
+   
+7. **API Testing**
+   - API responses should be fast, reliable and secure. Ensure all provided API links are working as expected.
