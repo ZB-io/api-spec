@@ -23,8 +23,6 @@ Scenario: Validate that valid request returns Laureate details
   * status 200
   And match response == { "laureates": '#[]', "meta": '#object' }
 
-...
-...
 
 Scenario: Validate bad request returns error message 
   * path basePath

@@ -22,6 +22,7 @@ Scenario: Successful retrieval of laureate information
   When method GET
   Then status 200
   And match each response == 
+  """
   {
     "code": "#number",
     "message" : "#string",
@@ -39,6 +40,7 @@ Scenario: Successful retrieval of laureate information
       },
     }
   }
+  """
 
 Scenario: retrieve a non-existing laureate
 
