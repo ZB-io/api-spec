@@ -13,7 +13,7 @@
 
       @Test
       void testAll() {
-          String apiHostServer = System.getenv().getOrDefault("API_HOST", "http://localhost:8080");
+          String apiHostServer = System.getenv().getOrDefault("API_HOST", "https://sandbox.ob.hsbcnet.com/mock/obie/open-banking/v3.1/cbpii");
           Results results = Runner.path("classpath:org/springframework/api_tests")
                   .systemProperty("url.base", apiHostServer)
                   .parallel(1);
