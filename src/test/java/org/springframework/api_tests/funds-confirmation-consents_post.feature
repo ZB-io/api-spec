@@ -29,12 +29,12 @@ Feature: Funds Confirmation Consents
     * def SECONDARY_IDENTIFICATION = karate.properties['SECONDARY_IDENTIFICATION']
     * def EXPIRATION_DATE_TIME = karate.properties['EXPIRATION_DATE_TIME']
 
-  Scenario Outline: Create Funds Confirmation Consent and Test CRUD apis
+  Scenario: Create Funds Confirmation Consent and Test CRUD apis
     Given path '/funds-confirmation-consents'
     And request DATA_OBJECT
     When method post
     Then status 201
     
-  Scenario Outline: Validate server Response
+  Scenario: Validate server Response
     And match response.Data contains { 'ConsentId': '#string', 'CreationDateTime': '#string', 'Status': '#string', 'StatusUpdateDateTime': '#string', 'ExpirationDateTime': '#string', 'DebtorAccount': '#object' }
     And match response == { 'Data': '#object', 'Links': '#object' }

@@ -8,10 +8,9 @@
 # 
 
 # ********RoostGPT********
----ROOST FEATURES START--- 
  Feature: Funds Confirmation API Test
 
-Background:
+  Background:
     * def urlBase = karate.properties['url.base'] || karate.get('urlBase', 'http://localhost:8080')
     * url urlBase
     * def AUTH_TOKEN = karate.properties['AUTH_TOKEN']
@@ -29,4 +28,3 @@ Background:
     | consentId  | reference  | amount  |  currency |
     | '2537482945'  | '12345'  | '0.01'  |'GBP'  |
  
----ROOST FEATURES END---
