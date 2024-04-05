@@ -1,0 +1,55 @@
+**Functional Test Cases**
+
+1. **Credit Card Due Reminder**
+  - Input: Credit card due date is 01/12/2022
+  - Expected output: Reminder notification is sent to the cardholder on 30/11/2022
+  - Edge case: If due date falls on a weekend or holiday, expect the reminder to be sent on the previous working day.
+
+2. **Overdue Balance Alert**
+  - Input: Payment due date passed (Example: Due date = 01/12/2022, Current date = 02/12/2022)
+  - Expected output: Overdue balance alert is sent to the cardholder on 02/12/2022
+  - Edge case: Alerts should be triggered on the first day of overdue, and not before the due date.
+
+3. **Collection Notification**
+  - Input: Account has become significantly delinquent (Example: Overdue period crosses 60 days)
+  - Expected output: Collection notification outlining the amount due and potential additional charges is sent to the cardholder.
+  - Edge case: If the account is just a few days past the due date, a collection notice should not be sent.
+
+4. **Payment Plan Proposal**
+  - Input: Cardholder indicates inability to pay the full overdue balance.
+  - Expected output: A payment plan proposal, with a structured repayment schedule and potentially reduced rates or fees, is provided to the cardholder.
+  - Edge case: If an account is only slightly delinquent, do not trigger a payment plan proposal.
+
+5. **Collection Agency Involvement**
+  - Input: Cardholder has not responded to previous notifications and reminders (Example: No response after 3 consecutive notifications)
+  - Expected output: A collection agency is involved to recover the overdue balance.
+  - Edge case: Involve a collection agency only after multiple notifications and an ample time period have been provided for the cardholder to respond.
+
+6. **Legal Action Initiation**
+  - Input: Cardholder has defaulted on payment and has not responded to the previous interventions (Example: Overdue period crosses 180 days)
+  - Expected output: The card issuer initiates legal action against the cardholder.
+  - Edge case: Legal action should be the last resort and should only be initiated after all other collection efforts have failed to recover the overdue balance.
+
+
+**Non-Functional Test Cases**
+
+1. **Performance Tests**
+  - Test the system under high loads, such as during peak times, to ensure it can handle sending notifications to a large number of cardholders without degradation in performance.
+
+2. **Usability Tests**
+  - Verify that notifications, alerts, and messages sent to cardholders are clear, concise, and easy to understand on various platforms.
+
+3. **Security Tests**
+  - Ensure the system securely stores and handles sensitive cardholder data during all stages of the card payment collection process.
+
+4. **Reliability Tests**
+  - Test whether the system can reliably send notifications and alerts as and when they are needed, without failure.
+
+5. **Compatibility Tests**
+  - Check that notifications, alerts, and messages display correctly on different device types and screen sizes.
+
+6. **Resilience Tests**
+  - Test how well the system can recover from problems or failures, such as a network outage, and ensure it maintains all critical data. 
+
+7. **Compliance Tests**
+  - Ensure all processes comply with relevant legal and regulatory standards.
