@@ -1,0 +1,42 @@
+[
+  {
+    "ids": "KJFK,KLAX,KORD",
+    "bbox": "-122.4,37.6,-122.3,37.7",
+    "format": "xml",
+    "metar": true,
+    "time": "2023-05-15T12:00:00Z",
+    "date": "2023-05-15",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "ids": "KBOS,KSEA,KDEN",
+    "bbox": "-87.6,41.8,-87.5,41.9",
+    "format": "json",
+    "metar": false,
+    "time": "2023-05-15T18:30:00Z",
+    "date": "2023-05-15",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "ids": "",
+    "bbox": "invalid_bbox",
+    "format": "invalid_format",
+    "metar": "not_boolean",
+    "time": "invalid_time",
+    "date": "2023-13-45",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "ids": "INVALID_ID",
+    "bbox": "-180,-90,180,90",
+    "format": "csv",
+    "metar": true,
+    "time": "2023-05-15T24:00:00Z",
+    "date": "2023-02-30",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  }
+]

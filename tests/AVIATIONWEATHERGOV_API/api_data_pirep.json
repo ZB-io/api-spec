@@ -1,0 +1,87 @@
+[
+  {
+    "id": "KMCO",
+    "distance": 10,
+    "bbox": [
+      -81.5,
+      28.3,
+      -81.2,
+      28.6
+    ],
+    "format": "xml",
+    "age": 30,
+    "level": "surface",
+    "inten": "high",
+    "date": "2023-11-15T12:00:00Z",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "id": "KBOS",
+    "distance": 25,
+    "bbox": [
+      -71.2,
+      42.2,
+      -70.8,
+      42.5
+    ],
+    "format": "json",
+    "age": 45,
+    "level": "low",
+    "inten": "medium",
+    "date": "2023-11-16T09:30:00Z",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "id": "KSFO",
+    "distance": 15,
+    "bbox": [
+      -122.5,
+      37.5,
+      -122.3,
+      37.7
+    ],
+    "format": "csv",
+    "age": 60,
+    "level": "high",
+    "inten": "low",
+    "date": "2023-11-17T18:45:00Z",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "id": "INVALID_ID",
+    "distance": -5,
+    "bbox": [
+      200,
+      -100,
+      300,
+      100
+    ],
+    "format": "invalid_format",
+    "age": -10,
+    "level": "invalid_level",
+    "inten": "invalid_intensity",
+    "date": "invalid_date",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "id": "KJFK",
+    "distance": 20,
+    "bbox": [
+      -74,
+      40.6,
+      -73.7,
+      40.8
+    ],
+    "format": "xml",
+    "age": 15,
+    "level": "medium",
+    "inten": "high",
+    "date": "2023-11-18T14:15:00Z",
+    "statusCode": 200,
+    "scenario": "successful operation"
+  }
+]

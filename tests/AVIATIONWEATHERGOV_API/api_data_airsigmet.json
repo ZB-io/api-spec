@@ -1,0 +1,71 @@
+[
+  {
+    "format": "json",
+    "types": [
+      "TAF",
+      "METAR"
+    ],
+    "hazard": [
+      "TS",
+      "SN"
+    ],
+    "level": [
+      "low",
+      "medium"
+    ],
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "format": "xml",
+    "types": [
+      "PIREP",
+      "SIGMET"
+    ],
+    "hazard": [
+      "FG",
+      "IC"
+    ],
+    "level": [
+      "high",
+      "extreme"
+    ],
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "format": "csv",
+    "types": [
+      "AIRMET",
+      "FA"
+    ],
+    "hazard": [
+      "WS",
+      "VA"
+    ],
+    "level": [
+      "moderate",
+      "severe"
+    ],
+    "statusCode": 200,
+    "scenario": "successful operation"
+  },
+  {
+    "format": 123,
+    "types": "invalid_type",
+    "hazard": [
+      "INVALID"
+    ],
+    "level": 42,
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "format": "invalid",
+    "types": [],
+    "hazard": true,
+    "level": null,
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "format": "gfa",
+    "hazard": "TURB",
+    "level": "SFC",
+    "date": "2023-11-15T12:00:00Z",
+    "statusCode": 200,
+    "scenario": "Successful operation"
+  },
+  {
+    "format": "gfa",
+    "hazard": "ICE",
+    "level": "FL180",
+    "date": "2023-11-15T18:00:00Z",
+    "statusCode": 200,
+    "scenario": "Successful operation"
+  },
+  {
+    "format": "invalid_format",
+    "hazard": "TURB",
+    "level": "SFC",
+    "date": "2023-11-15T12:00:00Z",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "format": "gfa",
+    "hazard": "INVALID_HAZARD",
+    "level": "FL180",
+    "date": "2023-11-15T18:00:00Z",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "format": "gfa",
+    "hazard": "ICE",
+    "level": "INVALID_LEVEL",
+    "date": "2023-11-15T12:00:00Z",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  },
+  {
+    "format": "gfa",
+    "hazard": "TURB",
+    "level": "SFC",
+    "date": "invalid_date",
+    "statusCode": 400,
+    "scenario": "Input validation errors"
+  }
+]
