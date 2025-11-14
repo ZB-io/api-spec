@@ -1,0 +1,136 @@
+openapi: 3.0.0
+info:
+  title: Credit Card API
+  version: 1.0.0
+servers:
+  - url: https://api.creditcard.com
+paths:
+  /dueReminder:
+    post:
+      summary: Set up due reminder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dueDate:
+                  type: string
+                  format: date
+                  example: '2022-12-01'
+      responses:
+        '200':
+          description: Reminder scheduled successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  schedule:
+                    type: string
+                    format: date
+                    example: '2022-11-30'
+  /overdueAlert:
+    post:
+      summary: Send overdue alert
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dueDate:
+                  type: string
+                  format: date
+                  example: '2022-12-01'
+                currentDate:
+                  type: string
+                  format: date
+                  example: '2022-12-02'
+      responses:
+        '200':
+          description: Overdue alert send succesfull
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  alertDate:
+                    type: string
+                    format: date
+                    example: '2022-12-02'
+  /collectionNotification:
+    post:
+      summary: Send collection notice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overdueDays:
+                  type: integer
+                  example: 60
+      responses:
+        '200':
+          description: Collection notice sent succesfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  overdueAmount:
+                    type: float
+                    example: 1500.00
+  /paymentPlan:
+    post:
+      summary: Send payment plan proposal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                unableToPay:
+                  type: boolean
+                  example: true
+      responses:
+        '200':
+          description: Payment plan proposal created succesfully
+  /agencyInvolvement:
+    post:
+      summary: Involve collection agency
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notificationCount:
+                  type: integer
+                  example: 3
+      responses:
+        '200':
+          description: Collection agency screenshot.json involved succesfully
+  /legalAction:
+    post:
+      summary: Initiate legal action
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overduePeriod:
+                  type: integer
+                  example: 180
+      responses:
+        '200':
+          description: Legal action initiated succesfully
+      
