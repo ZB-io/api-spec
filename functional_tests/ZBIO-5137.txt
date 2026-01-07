@@ -1,0 +1,90 @@
+Here is a detailed test plan covering both functional and non-functional test cases for the given user story:
+
+**Functional Test Cases:**
+
+1. **Validate Credit Card Due Date and Balance**
+   - **Input**: Valid Credit Card number
+   - **Expected Output**: Credit Card Due Date and actual balance is displayed correctly
+   - **Edge Cases**: 
+     - Invalid card numbers
+     - Expired card numbers
+
+2. **Retrieve Unpaid and Overdue Balance**
+   - **Input**: Valid Credit Card number
+   - **Expected Output**: Unpaid and overdue balance is displayed correctly
+   - **Edge Cases**:
+     - Card previously reported lost/stolen
+     - Credit card with zero balance
+     - Credit card with only pending transactions
+
+3. **Initiate a Call to User for Unpaid and Overdue Balance**
+   - **Input**: User phone number and credit card details
+   - **Expected Output**: A call to the user is initiated
+   - **Edge Cases**:
+     - Unavailable or incorrect contact number
+     - Call during non-working hours
+
+4. **Collect Payment for Balance**
+   - **Input**: Payment amount
+   - **Expected Output**: Payment gets credited and balance gets updated correctly
+   - **Edge Cases**:
+     - Insufficient funds in bank account
+     - Partial payments
+     - Multiple payments on the same day
+
+5. **Update The Credit Card Balance Post Payment**
+   - **Input**: Payment amount and credit card details
+   - **Expected Output**: Updated balance after payment is received is shown correctly
+   - **Edge Cases**:
+     - Multiple payments on the same day
+     - Payment in different currency
+
+**Non-Functional Test Cases:**
+
+1. **Performance Test**
+   - Check the responsiveness in fetching the Credit Card Due Date and actual balance
+   - Assess the time taken to initiate the call to the user
+
+2. **Security Test**
+   - Check if sensitive customer's card information is protected when processed
+   - Test if the system is secure against unauthorized access to payment details
+
+3. **Usability Test**
+   - Check the ease of navigating through the application for retrieving overdue balance and making payments
+   - Validate the accuracy of inputs and Error messages are provided for invalid inputs
+
+4. **Compatibility Test**
+   - Check if the application works correctly on different operating systems and browsers when making payments
+
+5. **Recovery Test**
+   - Check how quickly the system recovers from crashes during the payment procedures
+
+6. **Localization Test**
+   - Check if the card dates, currency, and balance display correctly as per the users' locale
+
+**Gherkin Scenarios:**
+
+Scenario 1: Fetch the credit card due date and balance for a given credit card
+
+```Gherkin
+Given a valid Credit Card details
+When the user requests the due date and balance
+Then the system should display the due date and balance
+```
+
+Scenario 2: Arrange for a call to the user if the balance is unpaid and overdue
+
+```Gherkin
+Given an Unpaid and Overdue Credit Card balance
+When the system cross-checks the balance
+Then a call should be arranged to the user
+```
+
+Scenario 3: Update the card balance once payment is collected
+
+```Gherkin
+Given the system starts collecting payment
+And the payment is successful
+When the system processes the payment
+Then the card balance should be updated
+```
