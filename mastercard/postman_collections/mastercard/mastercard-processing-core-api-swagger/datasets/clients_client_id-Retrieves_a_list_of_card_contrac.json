@@ -1,0 +1,114 @@
+[
+  {
+    "limit": 10,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "limit": 25,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "AcmeCorp",
+    "limit": 50,
+    "offset": 10,
+    "statuses": [
+      "ACTIVE",
+      "INACTIVE"
+    ],
+    "creation_date": "2023-12-15",
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "limit": 1,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "limit": 100,
+    "client": "BetaBank",
+    "offset": 60,
+    "statuses": [
+      "BLOCKED"
+    ],
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "limit": 15,
+    "offset": 2,
+    "creation_date": "2022-05-01",
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 150,
+    "offset": 1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 10,
+    "offset": -3,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 5,
+    "statuses": [
+      "PENDING"
+    ],
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 6,
+    "offset": 3,
+    "statuses": [
+      "ACTIVE",
+      "INVALID_STATUS"
+    ],
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": "ten",
+    "offset": 1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "UnknownClient",
+    "limit": 50,
+    "offset": 10,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "limit": 70,
+    "offset": 999999,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "limit": 80,
+    "offset": 8,
+    "client": "UnauthorizedUser",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

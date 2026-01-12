@@ -1,0 +1,88 @@
+[
+  {
+    "client": "abcCorp",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "xyzEnterprise",
+    "tag": "priority",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "123Global",
+    "tag": "marketing",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "deltaInc",
+    "tag": "confidential",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "tag": "finance",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "!!!!!!!",
+    "tag": "priority",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "testUser",
+    "tag": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "nonExistingClient",
+    "tag": "priority",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "globalGroup",
+    "tag": "nonExistingTag",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "restrictedClient",
+    "tag": "confidential",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "financeDept",
+    "tag": "hr",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "devOps",
+    "tag": "automation",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "hrGroup",
+    "tag": "employee",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "techDivision",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  }
+]

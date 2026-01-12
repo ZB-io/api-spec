@@ -1,0 +1,124 @@
+[
+  {
+    "client": "CLIENT_1A",
+    "classifier": "TYPE_A",
+    "classifierValue": "VALUE_1A",
+    "startDate": "2031-06-25",
+    "statusCode": 204,
+    "scenario": "The client classifier has been successfully set up."
+  },
+  {
+    "client": "CLIENT_2B",
+    "classifier": "TYPE_B",
+    "classifierValue": "VALUE_2B",
+    "startDate": "2031-08-15",
+    "endDate": "2032-01-05",
+    "statusCode": 204,
+    "scenario": "The client classifier has been successfully set up."
+  },
+  {
+    "client": "CLIENT_3C",
+    "classifier": "TYPE_C",
+    "classifierValue": "VALUE_3C",
+    "startDate": "2032-09-06",
+    "endDate": "2033-11-24",
+    "statusCode": 204,
+    "scenario": "The client classifier has been successfully set up."
+  },
+  {
+    "client": "CLIENT_4D",
+    "classifierValue": "VALUE_4D",
+    "startDate": "2031-07-30",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_5E",
+    "classifier": "TYPE_E",
+    "startDate": "2032-03-17",
+    "endDate": "2032-06-30",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_6F",
+    "classifier": "TYPE_F",
+    "classifierValue": "",
+    "startDate": "2031-06-25",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_7G",
+    "classifier": "TYPE_G",
+    "classifierValue": "VALUE_TOO_LONG_FOR_THIS_CLASSIFIER_FIELD_32CHARS",
+    "startDate": "2031-08-01",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_8H",
+    "classifier": "TYPE_H",
+    "classifierValue": "VALUE_8H",
+    "startDate": "2031-06-35",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_9I",
+    "classifier": "TYPE_I",
+    "classifierValue": "VALUE_9I",
+    "startDate": "2031-06-25",
+    "endDate": "30-12-2031",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_10J",
+    "classifier": "TYPE_J",
+    "classifierValue": "VALUE_10J",
+    "startDate": "2031-07-24",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "CLIENT_XYZ",
+    "classifier": "TYPE_XYZ",
+    "classifierValue": "VALUE_OUT_OF_ENUM",
+    "startDate": "2031-06-25",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "CLIENT_11",
+    "classifier": "TYPE_L",
+    "classifierValue": "VALUE_11L",
+    "startDate": "2020-12-31",
+    "endDate": "2031-12-31",
+    "statusCode": 204,
+    "scenario": "The client classifier has been successfully set up."
+  },
+  {
+    "client": "CLIENT_12",
+    "classifier": "TYPE_M",
+    "classifierValue": "VALUE_12M",
+    "startDate": "2030-04-15",
+    "statusCode": 204,
+    "scenario": "The client classifier has been successfully set up."
+  },
+  {
+    "client": "CLIENT_13",
+    "classifierValue": "VALUE_13",
+    "startDate": "2032-03-02",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CLIENT_14",
+    "classifier": "TYPE_N",
+    "classifierValue": "VALUE_14N",
+    "startDate": "invalid-date",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

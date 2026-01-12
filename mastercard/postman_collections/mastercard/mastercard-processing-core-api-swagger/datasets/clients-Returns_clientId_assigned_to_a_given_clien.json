@@ -1,0 +1,106 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "a8f7ab12-3421-49b2-9e12-efe234a52ea1",
+    "clientIdentifier": "A123456789",
+    "clientIdentifierType": "IDENTIFICATION_DOCUMENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "bbf241ec-6787-43a6-80e1-7b7c8dfe6b55",
+    "clientIdentifier": "SOC-44321",
+    "clientIdentifierType": "SOCIAL_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "d322e8c2-9c44-48be-930c-f1807898ab6c",
+    "clientIdentifier": "TXP-8820191",
+    "clientIdentifierType": "TAXPAYER_IDENTIFIER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "3e48c9ab-27ba-4512-b332-8882bf63ab8c",
+    "clientIdentifier": "4718271",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "451da2e3-209f-4b8b-bc50-e7367f110f57",
+    "clientIdentifier": "fc8923b",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7698df3e-215b-43cb-b70f-c15e6b6f9c82",
+    "clientIdentifier": "4718181",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "89e9612e-c74b-4709-97af-52214089d9e5",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "NOT_A_VALID_ENUM",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "92c2b039-2e8e-44c7-b9fc-9b6cd9ac275d",
+    "clientIdentifier": "",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "e1f6725a-24df-4b7b-82cc-f6922c3ec28a",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": 12345,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "f8d89e34-3d75-4b6b-8be4-ae676707784e",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "g81b3c2d-c92b-4e45-a7db-8796db8ac2d6",
+    "clientIdentifier": "4718118",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "11e7a542-cf42-4f1b-bcac-5b43fd5169d0",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "b331c2a5-931a-4db1-99a5-0e64e5d23881",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "d1fa9332-917a-47e3-a6b7-ef5b3d43d802",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "TAXPAYER_IDENTIFIER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

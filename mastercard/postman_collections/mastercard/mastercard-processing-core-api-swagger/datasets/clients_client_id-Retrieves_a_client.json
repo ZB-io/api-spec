@@ -1,0 +1,77 @@
+[
+  {
+    "client": "ABC_CORP",
+    "statusCode": 200,
+    "scenario": "The client has been successfully fetched."
+  },
+  {
+    "client": "XYZ_LLC",
+    "statusCode": 200,
+    "scenario": "The client has been successfully fetched."
+  },
+  {
+    "client": "DEF_PARTNERS",
+    "statusCode": 200,
+    "scenario": "The client has been successfully fetched."
+  },
+  {
+    "client": "ABC_CORP",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "CORP$123",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "special@client",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ABC_CORP",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "XYZ_LLC",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "NON_EXISTENT_CLIENT",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "UNKNOWN_CLIENT",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": 12345,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ABC_CORP",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "XYZ_LLC",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

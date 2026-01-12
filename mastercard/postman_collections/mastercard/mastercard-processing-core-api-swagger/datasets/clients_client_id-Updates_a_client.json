@@ -1,0 +1,173 @@
+[
+  {
+    "If-Match": "7fedf39c3c2952a62821de4b480d1d6f",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "client": "32587",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "2346cb2d8f0619a00a22b2cdbe3c9995",
+    "Idempotency-Key": "670e8a1d-2a76-48a8-8139-c7a08cf77c7a",
+    "client": "78941",
+    "clientCompanyData.companyDepartment": "Finance",
+    "clientCompanyData.companyName": "Acme Corp",
+    "clientCompanyData.companyTradeName": "Acme",
+    "clientContactData.phoneNumberMobile": "+4915112311234",
+    "clientIdentificationData.identificationDocumentType": "PASSPORT",
+    "clientIdentificationData.identificationDocumentNumber": "C67981231",
+    "clientPersonalData.birthDate": "1982-07-01",
+    "clientPersonalData.birthPlace": "Berlin",
+    "clientPersonalData.gender": "M",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "e1a7c9dced6774c71f1bd2f01379dc5c",
+    "Idempotency-Key": "1482f586-40af-437a-bb8d-4b8a93ef966e",
+    "client": "90012",
+    "clientContactData.phoneNumberMobile": "+447511108822",
+    "clientIdentificationData.identificationDocumentType": "ID_CARD",
+    "clientIdentificationData.identificationDocumentNumber": "AZX987654",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "7fedf39c3c2952a62821de4b480d1d6f",
+    "Idempotency-Key": "b82277de-2aff-422a-b172-1b640eb33bee",
+    "client": "66552",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "If-Match": "",
+    "Idempotency-Key": "9ffb6d2c-7da2-41b6-8578-86770f111a91",
+    "client": "38561",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "If-Match": "abcdef99999999999999999999999999",
+    "Idempotency-Key": "xyz-foobar",
+    "client": "11123",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "If-Match": "somerandomstringwithtoolongvalueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeez",
+    "Idempotency-Key": "10b04c6c-84ea-41c8-9365-4d1701f28334",
+    "client": "56473",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "If-Match": "e63c546f9c7d4122b8da6e12c6871f44",
+    "Idempotency-Key": "e6c9ebb4-cfb4-4800-8e93-9e525e4790ae",
+    "client": "83467",
+    "clientPersonalData.gender": "X",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "If-Match": "6546a2c6e3db45448dabd3b08d50e100",
+    "Idempotency-Key": "ace3c8c2-c5ec-41e9-8008-7dcab2cf2674",
+    "client": "50879",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "If-Match": "3e1e0b9c4bea4ae7aea73483eafcd2a0",
+    "Idempotency-Key": "e7e56940-3892-4b6b-9b7d-4a279fc61053",
+    "client": "22311",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "If-Match": "e2b0465e536b43b19b88d7b7ead2593e",
+    "Idempotency-Key": "5fced594-5c95-4769-857b-2c62c6db5157",
+    "client": "11111111122222",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "If-Match": "46b85374f4304297a2e942e564d9be0b",
+    "Idempotency-Key": "1fb5623b-3230-4430-8f0b-1f7cd11f0298",
+    "client": "84662",
+    "clientCompanyData.companyDepartment": "Sales",
+    "clientCompanyData.position": "Manager",
+    "clientIdentificationData.identificationDocumentType": "DRIVERS_LICENSE",
+    "clientIdentificationData.identificationDocumentNumber": "DL2398504",
+    "clientPersonalData.birthDate": "1991-11-30",
+    "clientPersonalData.gender": "F",
+    "embossedData.firstName": "Anna",
+    "embossedData.lastName": "Meier",
+    "embossedData.companyName": "Meier Group",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "54e0b5ada3cd4425522e3793504935dd",
+    "Idempotency-Key": "13cdb555-c9a1-4216-b77a-c4178c4839b3",
+    "client": "10214",
+    "clientPersonalData.gender": "M",
+    "clientPersonalData.language": "en",
+    "clientPersonalData.maritalStatus": "SINGLE",
+    "embossedData.title": "Dr.",
+    "embossedData.lastName": "Schneider",
+    "clientContactData.phoneNumberHome": "+4916510009999",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "334d1845b7eda1583347e730b016e6d5",
+    "Idempotency-Key": "d14c3e90-690a-4414-8aaf-054c556a1f2c",
+    "client": "89112",
+    "clientContactData.phoneNumberMobile": "+4916317722889",
+    "clientPersonalData.gender": "O",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "eee88f13fad043b2b6fc6ea7d8f59d89",
+    "Idempotency-Key": "b67f6010-fc04-4ef8-9801-d062c65a4a2e",
+    "client": "30587",
+    "clientPersonalData.birthDate": "1977-02-14",
+    "clientPersonalData.birthPlace": "Hamburg",
+    "clientPersonalData.shortName": "Karl",
+    "clientPersonalData.suffix": "Sr.",
+    "clientCompanyData.companyName": "DentalCare AG",
+    "clientCompanyData.companyTradeName": "Dental",
+    "embossedData.firstName": "Karl",
+    "embossedData.lastName": "Foster",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "d994ea6b1adf4a53ac8d80e6c5dca1a2",
+    "Idempotency-Key": "8b8cc391-439c-46a8-ad54-224ef74bcfa2",
+    "client": "16472",
+    "clientExpiryDate": "2027-06-30",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "b73524e9b37d443b9e696c20098c7b0c",
+    "Idempotency-Key": "5caf2f0f-3cc0-4be9-b512-c6ababd71002",
+    "client": "37333",
+    "clientIdentificationData.taxPosition": "EMPLOYEE",
+    "clientIdentificationData.taxpayerIdentifier": "DE123456789",
+    "clientIdentificationData.socialNumber": "A2B567890",
+    "clientCompanyData.position": "Developer",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  },
+  {
+    "If-Match": "cfb4dab8e67b46c3a8cdfce776d482e7",
+    "Idempotency-Key": "f7c7d6fc-3e56-438c-9dec-cdfbae9c10eb",
+    "client": "14888",
+    "additionalDate01": "2025-04-02",
+    "additionalDate02": "2026-01-08",
+    "statusCode": 204,
+    "scenario": "A client has been successfully updated."
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "client": "AcmeCorp",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "BetaLtd",
+    "classifier": "finance",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "OmegaEnterprises",
+    "classifier": "retail",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "AcmeCorp",
+    "classifier": "healthcare",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "GammaTech",
+    "classifier": "technology",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "classifier": "finance",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "UnknownClient",
+    "classifier": "finance",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "AcmeCorp",
+    "classifier": "invalidClassifier",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "AcmeCorp",
+    "classifier": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "BetaLtd",
+    "classifier": 12345,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "AcmeCorp",
+    "classifier": "retail",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "BlockedClient",
+    "classifier": "finance",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "AcmeCorp$",
+    "classifier": "finance",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

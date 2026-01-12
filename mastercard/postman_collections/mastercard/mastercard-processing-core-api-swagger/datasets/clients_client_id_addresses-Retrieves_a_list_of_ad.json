@@ -1,0 +1,76 @@
+[
+  {
+    "client": "AcmeCorp",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "GlobexInc",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "TechSolutions",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "BlueSky",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "MegaValue",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "StarTech",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "InnovaGroup",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "FutureWorks",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "12345",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "!!InvalidName",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "UnknownClient",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ForbiddenCorp",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "AcmeCorp",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]
