@@ -1,0 +1,101 @@
+[
+  {
+    "client": "AlphaCorp",
+    "limit": 10,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "BetaEnterprises",
+    "limit": 25,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "GammaInc",
+    "limit": 100,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "DeltaSolutions",
+    "limit": 50,
+    "offset": 20,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "OmegaTech",
+    "limit": 75,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "limit": 20,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": 12345,
+    "limit": 10,
+    "offset": 5,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "limit": 15,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "SigmaGroup",
+    "limit": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "EpsilonPartners",
+    "limit": 101,
+    "offset": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ZetaGroup",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "UnknownClient",
+    "limit": 10,
+    "offset": 5,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "AlphaCorp",
+    "limit": 10,
+    "offset": 99999999,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "DeltaSolutions",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "GammaInc",
+    "limit": 10,
+    "offset": 50,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

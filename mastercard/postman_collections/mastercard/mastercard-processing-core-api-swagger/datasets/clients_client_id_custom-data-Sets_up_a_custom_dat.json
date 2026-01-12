@@ -1,0 +1,125 @@
+[
+  {
+    "client": "AcmeCorp",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "_0.tagContainer": "MainContainer",
+    "_0.tagName": "ActiveUser",
+    "_0.removeTag": false,
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "BetaTech",
+    "Idempotency-Key": "e1a2b4c8-abd7-45cc-92f4-7954fa06d0cc",
+    "_0.tagContainer": "Secondary",
+    "_0.tagName": "Trial",
+    "_0.removeTag": true,
+    "_0.tagValue": "Level2",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "GammaSolutions",
+    "Idempotency-Key": "f2f9b5fd-8dec-4260-b821-50519741f4e1",
+    "_0.tagContainer": "Default",
+    "_0.tagName": "Premium",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "DeltaServ",
+    "Idempotency-Key": "95f35a47-496a-4b7c-9172-f5905b170a19",
+    "_0.tagContainer": "MainContainer",
+    "_0.tagName": "InactiveUser",
+    "_0.tagValue": "Level1",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "EdgeCorp",
+    "Idempotency-Key": "fc44da21-74dd-4d77-83d6-c209e3b9dfe2",
+    "_0.tagContainer": "Archive",
+    "_0.tagName": "Admin",
+    "_0.removeTag": false,
+    "_0.tagValue": "Level3",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "Idempotency-Key": "652f2e4c-58c9-409f-89e8-ffb9774dbcb5",
+    "_0.tagContainer": "MainContainer",
+    "_0.removeTag": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "TestCorp",
+    "Idempotency-Key": "",
+    "_0.tagContainer": "Container",
+    "_0.tagName": "TestTag",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "FakeInc",
+    "Idempotency-Key": "not-a-uuid",
+    "_0.tagContainer": "Secondary",
+    "_0.tagName": "InvalidTag",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ProxyLtd",
+    "Idempotency-Key": "f2f9b5fd-8dec-4260-b821-50519741abcd",
+    "_0.tagContainer": 453,
+    "_0.tagName": "Admin",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "NoPermService",
+    "Idempotency-Key": "1a4c6606-facd-47db-8b29-32f718a31f23",
+    "_0.tagContainer": "MainContainer",
+    "_0.tagName": "NotAllowedTag",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "MissingInfo",
+    "Idempotency-Key": "5bbaf8ca-6d18-408e-83bf-dc2f7522e33d",
+    "_0.tagContainer": "GhostContainer",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "TrueBlue",
+    "Idempotency-Key": "3ac10fd5-1c9c-4cfd-8049-831a43881d30",
+    "_0.tagContainer": "LostResource",
+    "_0.tagName": "User",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "RepeatKeyLtd",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "_0.tagContainer": "MainContainer",
+    "_0.tagName": "ActiveUser",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "client": "OldKeyInc",
+    "Idempotency-Key": "e1a2b4c8-abd7-45cc-92f4-7954fa06d0cc",
+    "_0.tagContainer": "Secondary",
+    "_0.tagName": "Trial",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "ccf23b1e-bc22-45a3-a88a-273e5d06429f",
+    "_0.tagContainer": "TestContainer",
+    "_0.tagName": "TestTag",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

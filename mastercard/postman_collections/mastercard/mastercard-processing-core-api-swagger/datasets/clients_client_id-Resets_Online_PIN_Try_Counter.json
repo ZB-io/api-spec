@@ -1,0 +1,90 @@
+[
+  {
+    "client": "AlphaCorp",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 204,
+    "scenario": "The online PIN try counter has been successfully reset."
+  },
+  {
+    "client": "BetaSolutions",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 204,
+    "scenario": "The online PIN try counter has been successfully reset."
+  },
+  {
+    "client": "DeltaTech",
+    "clearAttemptsOnClientCards": false,
+    "statusCode": 204,
+    "scenario": "The online PIN try counter has been successfully reset."
+  },
+  {
+    "client": "GammaEnterprises",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "TestInc",
+    "clearAttemptsOnClientCards": "yes",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "OmegaLLC",
+    "clearAttemptsOnClientCards": null,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "UndefinedClient",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "AlphaCorp",
+    "clearAttemptsOnClientCards": false,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "SpecialUser",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "BlockedClient",
+    "clearAttemptsOnClientCards": false,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "UnknownClient123",
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "BetaSolutions",
+    "clearAttemptsOnClientCards": "false",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": 12345,
+    "clearAttemptsOnClientCards": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]
