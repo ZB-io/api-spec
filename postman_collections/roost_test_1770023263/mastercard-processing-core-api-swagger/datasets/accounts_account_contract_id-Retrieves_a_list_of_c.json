@@ -1,0 +1,142 @@
+[
+  {
+    "account_contract": "ACC123456",
+    "creation_date": "2023-10-01",
+    "statuses": [
+      "active",
+      "pending"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of card contract summaries has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC789012",
+    "limit": 5,
+    "offset": 2,
+    "statusCode": 200,
+    "scenario": "The list of card contract summaries has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC345678",
+    "creation_date": "2023-09-15",
+    "statuses": [
+      "inactive"
+    ],
+    "limit": 20,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of card contract summaries has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC901234",
+    "limit": 15,
+    "statusCode": 200,
+    "scenario": "The list of card contract summaries has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC567890",
+    "creation_date": "2023-08-20",
+    "statuses": [
+      "active"
+    ],
+    "limit": 50,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The list of card contract summaries has been fetched successfully."
+  },
+  {
+    "creation_date": "2023-07-10",
+    "statuses": [
+      "pending"
+    ],
+    "limit": 30,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC098765",
+    "creation_date": "2023-06-05",
+    "statuses": [
+      "unknown"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC432109",
+    "limit": 101,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC654321",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC321098",
+    "creation_date": "2023-05-25",
+    "statuses": [
+      "active"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "ACC876543",
+    "creation_date": "2023-04-15",
+    "statuses": [
+      "inactive"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "ACC210987",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC543210",
+    "creation_date": "2023-03-10",
+    "statuses": [
+      "active"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC678901",
+    "creation_date": "2023-02-05",
+    "statuses": [
+      "inactive"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC109876",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

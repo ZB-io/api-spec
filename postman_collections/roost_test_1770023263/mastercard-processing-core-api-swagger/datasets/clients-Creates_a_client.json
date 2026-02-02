@@ -1,0 +1,140 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "clientNumber": 654321,
+    "clientType": "corporate",
+    "orderDepartment": "sales",
+    "serviceGroupCode": "SG001",
+    "additionalDate01": "2023-10-01",
+    "clientCompanyData": {
+      "companyDepartment": "finance",
+      "companyName": "Tech Corp",
+      "companyTradeName": "TechCo",
+      "position": "Manager"
+    },
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "clientType": "individual",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "invalid-uuid",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "clientNumber": 123456,
+    "clientType": "unknownType",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientContactData": {
+      "phoneNumberMobile": "1234567890"
+    },
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientIdentificationData": {
+      "identificationDocumentNumber": "A1234567",
+      "identificationDocumentType": "passport"
+    },
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientPersonalData": {
+      "birthDate": "1990-01-01",
+      "gender": "male"
+    },
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientExpiryDate": "2025-12-31",
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "embossedData": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "title": "Mr."
+    },
+    "statusCode": 201,
+    "scenario": "The client has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientPersonalData": {
+      "birthDate": "invalid-date",
+      "gender": "male"
+    },
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "clientNumber": 123456,
+    "clientType": "individual",
+    "clientIdentificationData": {
+      "identificationDocumentNumber": "A1234567",
+      "identificationDocumentType": "invalidType"
+    },
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

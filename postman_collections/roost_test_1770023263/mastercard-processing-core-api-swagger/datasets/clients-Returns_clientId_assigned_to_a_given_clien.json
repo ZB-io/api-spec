@@ -1,0 +1,104 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "clientIdentifier": "4718181",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "clientIdentifier": "4718182",
+    "clientIdentifierType": "IDENTIFICATION_DOCUMENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "clientIdentifier": "4718183",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "clientIdentifier": "4718184",
+    "clientIdentifierType": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "clientIdentifier": "4718185",
+    "clientIdentifierType": "SOCIAL_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "clientIdentifier": "4718186",
+    "clientIdentifierType": "TAXPAYER_IDENTIFIER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "clientIdentifier": "4718187",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "clientIdentifier": "4718188",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "clientIdentifier": "4718189",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "clientIdentifier": "4718190",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "clientIdentifier": "4718191",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "clientIdentifier": "4718192",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "clientIdentifier": "4718193",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba84",
+    "clientIdentifier": "4718194",
+    "clientIdentifierType": "CLIENT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The client identifier has been fetched successfully."
+  }
+]

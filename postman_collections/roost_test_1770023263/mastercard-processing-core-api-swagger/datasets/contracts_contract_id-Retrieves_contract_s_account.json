@@ -1,0 +1,77 @@
+[
+  {
+    "contract": "C123456",
+    "statusCode": 200,
+    "scenario": "The financial information has been fetched successfully."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 200,
+    "scenario": "The financial information has been fetched successfully."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 200,
+    "scenario": "The financial information has been fetched successfully."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 200,
+    "scenario": "The financial information has been fetched successfully."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 200,
+    "scenario": "The financial information has been fetched successfully."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123456",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

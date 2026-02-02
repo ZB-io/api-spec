@@ -1,0 +1,105 @@
+[
+  {
+    "contract": "contract_001",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  },
+  {
+    "contract": "contract_002",
+    "limit": 50,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  },
+  {
+    "contract": "contract_003",
+    "limit": 100,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  },
+  {
+    "contract": "contract_004",
+    "limit": 101,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_005",
+    "limit": 0,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_006",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_007",
+    "limit": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_008",
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_009",
+    "limit": "ten",
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_010",
+    "limit": 10,
+    "offset": "zero",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_011",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "contract_012",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "contract_013",
+    "limit": 20,
+    "offset": 2,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  },
+  {
+    "contract": "contract_014",
+    "limit": 1,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  },
+  {
+    "contract": "contract_015",
+    "limit": 99,
+    "offset": 99,
+    "statusCode": 200,
+    "scenario": "The summary tree has been fetched successfully."
+  }
+]

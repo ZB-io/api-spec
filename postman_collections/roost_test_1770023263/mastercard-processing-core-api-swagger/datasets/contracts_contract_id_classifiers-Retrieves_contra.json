@@ -1,0 +1,88 @@
+[
+  {
+    "contract": "Contract123",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract456",
+    "classifier": "TypeA",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract789",
+    "classifier": "TypeB",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract101",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "classifier": "TypeC",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "InvalidContract",
+    "classifier": "TypeD",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "Contract202",
+    "classifier": "InvalidType",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "Contract303",
+    "classifier": "TypeE",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "Contract404",
+    "classifier": "TypeF",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "Contract505",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "Contract606",
+    "classifier": "TypeG",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract707",
+    "classifier": "TypeH",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract808",
+    "classifier": "TypeI",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract909",
+    "classifier": "TypeJ",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  },
+  {
+    "contract": "Contract010",
+    "classifier": "TypeK",
+    "statusCode": 200,
+    "scenario": "The list of contract classifiers has been fetched successfully."
+  }
+]

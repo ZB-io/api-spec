@@ -1,0 +1,152 @@
+[
+  {
+    "contract": "C123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "transactionTypeCode": "FP",
+    "amount": 100,
+    "currency": "EUR",
+    "statusCode": 201,
+    "scenario": "The credit transaction has been posted."
+  },
+  {
+    "contract": "C123457",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "transactionTypeCode": "FP",
+    "amount": 200,
+    "currency": "USD",
+    "description": "Payment for services",
+    "feeCode": "FX_FEE",
+    "postingDate": "2031-06-25",
+    "transactionTypeExtension": "Ext",
+    "uniqueReferenceNumber": "122357012767",
+    "statusCode": 201,
+    "scenario": "The credit transaction has been posted."
+  },
+  {
+    "contract": "C123458",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "transactionTypeCode": "FP",
+    "amount": 300,
+    "currency": "GBP",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123459",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "transactionTypeCode": "INVALID_CODE",
+    "amount": 400,
+    "currency": "EUR",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123460",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "transactionTypeCode": "FP",
+    "amount": 500,
+    "currency": "XYZ",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123461",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "transactionTypeCode": "FP",
+    "amount": 600,
+    "currency": "EUR",
+    "description": "Payment for goods",
+    "feeCode": "FX_FEE",
+    "postingDate": "2031-06-25",
+    "transactionTypeExtension": "Ext",
+    "uniqueReferenceNumber": "122357012768",
+    "statusCode": 201,
+    "scenario": "The credit transaction has been posted."
+  },
+  {
+    "contract": "C123462",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "transactionTypeCode": "FP",
+    "amount": 700,
+    "currency": "EUR",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123463",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "transactionTypeCode": "FP",
+    "amount": 800,
+    "currency": "EUR",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C123464",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "transactionTypeCode": "FP",
+    "amount": 900,
+    "currency": "EUR",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "C123465",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "transactionTypeCode": "FP",
+    "amount": 1000,
+    "currency": "EUR",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "C123466",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "transactionTypeCode": "FP",
+    "amount": 1100,
+    "currency": "EUR",
+    "description": "Payment for subscription",
+    "feeCode": "FX_FEE",
+    "postingDate": "2031-06-25",
+    "transactionTypeExtension": "Ext",
+    "uniqueReferenceNumber": "122357012769",
+    "statusCode": 201,
+    "scenario": "The credit transaction has been posted."
+  },
+  {
+    "contract": "C123467",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "transactionTypeCode": "FP",
+    "amount": 1200,
+    "currency": "EUR",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C123468",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "transactionTypeCode": "FP",
+    "amount": 1300,
+    "currency": "EUR",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C123469",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "transactionTypeCode": "FP",
+    "amount": 1400,
+    "currency": "EUR",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C123470",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba84",
+    "transactionTypeCode": "FP",
+    "amount": 1500,
+    "currency": "EUR",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  }
+]

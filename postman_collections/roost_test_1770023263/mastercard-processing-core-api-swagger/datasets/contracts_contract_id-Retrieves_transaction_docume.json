@@ -1,0 +1,166 @@
+[
+  {
+    "contract": "CON123456",
+    "date": "2023-10-01",
+    "authorization_filter": "auth123",
+    "direction": "CREDIT",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "PAYMENT",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON654321",
+    "date": "2023-09-15",
+    "authorization_filter": "auth456",
+    "direction": "DEBIT",
+    "limit": 20,
+    "offset": 5,
+    "transaction_type": "REFUND",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON789012",
+    "date": "2023-08-20",
+    "authorization_filter": "auth789",
+    "direction": "NONE",
+    "limit": 50,
+    "offset": 10,
+    "transaction_type": "TRANSFER",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON345678",
+    "date": "2023-07-10",
+    "authorization_filter": "auth012",
+    "direction": "CREDIT",
+    "limit": 100,
+    "offset": 0,
+    "transaction_type": "PAYMENT",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON901234",
+    "date": "2023-06-05",
+    "authorization_filter": "auth345",
+    "direction": "DEBIT",
+    "limit": 1,
+    "offset": 0,
+    "transaction_type": "REFUND",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON567890",
+    "date": "2023-05-25",
+    "authorization_filter": "auth678",
+    "direction": "NONE",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "TRANSFER",
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "contract": "CON123456",
+    "date": "2023-10-01",
+    "authorization_filter": "auth123",
+    "direction": "INVALID_DIRECTION",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "PAYMENT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON654321",
+    "date": "2023-09-15",
+    "authorization_filter": "auth456",
+    "limit": 20,
+    "offset": 5,
+    "transaction_type": "REFUND",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON789012",
+    "date": "2023-08-20",
+    "authorization_filter": "auth789",
+    "direction": "NONE",
+    "limit": 150,
+    "offset": 10,
+    "transaction_type": "TRANSFER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON345678",
+    "date": "2023-07-10",
+    "authorization_filter": "auth012",
+    "direction": "CREDIT",
+    "limit": 10,
+    "offset": -5,
+    "transaction_type": "PAYMENT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON901234",
+    "date": "2023-06-05",
+    "authorization_filter": "auth345",
+    "direction": "DEBIT",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON567890",
+    "date": "2023-05-25",
+    "authorization_filter": "auth678",
+    "direction": "NONE",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "TRANSFER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "CON123456",
+    "date": "2023-10-01",
+    "authorization_filter": "auth123",
+    "direction": "CREDIT",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "PAYMENT",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "CON654321",
+    "date": "2023-09-15",
+    "authorization_filter": "auth456",
+    "direction": "DEBIT",
+    "limit": 20,
+    "offset": 5,
+    "transaction_type": "REFUND",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "CON789012",
+    "date": "2023-08-20",
+    "authorization_filter": "auth789",
+    "direction": "NONE",
+    "limit": 50,
+    "offset": 10,
+    "transaction_type": "TRANSFER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

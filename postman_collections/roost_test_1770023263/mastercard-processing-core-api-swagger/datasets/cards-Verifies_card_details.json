@@ -1,0 +1,119 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "cardContractNumber": "1234567890123456",
+    "cardVerificationCode": "347",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "9999",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "9999",
+    "cardVerificationCode": "347",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "cardContractNumber": "0000000000000000",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "invalid-uuid",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "cardContractNumber": "1234567890123456",
+    "cardExpiryDate": "3004",
+    "cardVerificationCode": "347",
+    "statusCode": 200,
+    "scenario": "The card details verification result."
+  }
+]

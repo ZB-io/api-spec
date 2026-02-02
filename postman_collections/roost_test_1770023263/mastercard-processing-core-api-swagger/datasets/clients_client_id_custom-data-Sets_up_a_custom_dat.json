@@ -1,0 +1,132 @@
+[
+  {
+    "client": "client123",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "_0.tagContainer": "container1",
+    "_0.tagName": "tagName1",
+    "_0.removeTag": false,
+    "_0.tagValue": "value1",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "client456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "_0.tagContainer": "container2",
+    "_0.tagName": "tagName2",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "client789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "_0.tagContainer": "container3",
+    "_0.tagName": "tagName3",
+    "_0.removeTag": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client101",
+    "_0.tagContainer": "container4",
+    "_0.tagName": "tagName4",
+    "_0.removeTag": false,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client102",
+    "Idempotency-Key": "invalid-uuid",
+    "_0.tagContainer": "container5",
+    "_0.tagName": "tagName5",
+    "_0.removeTag": true,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client103",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "_0.tagContainer": "container6",
+    "_0.tagName": "tagName6",
+    "_0.removeTag": "notABoolean",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client104",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "_0.tagContainer": "container7",
+    "_0.tagName": "tagName7",
+    "_0.removeTag": false,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "client105",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "_0.tagContainer": "container8",
+    "_0.tagName": "tagName8",
+    "_0.removeTag": true,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "client106",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "_0.tagContainer": "container9",
+    "_0.tagName": "tagName9",
+    "_0.removeTag": false,
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "client": "client107",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "_0.tagContainer": "container10",
+    "_0.tagName": "tagName10",
+    "_0.removeTag": true,
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "client": "client108",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "_0.tagContainer": "container11",
+    "_0.tagName": "tagName11",
+    "_0.removeTag": false,
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "client109",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "_0.tagContainer": "container12",
+    "_0.tagName": "tagName12",
+    "_0.removeTag": true,
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "client110",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "_0.tagContainer": "container13",
+    "_0.tagName": "tagName13",
+    "_0.removeTag": false,
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  },
+  {
+    "client": "client111",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "_0.tagContainer": "container14",
+    "_0.tagName": "tagName14",
+    "_0.removeTag": true,
+    "statusCode": 200,
+    "scenario": "The custom data for a client has been successfully set up."
+  }
+]

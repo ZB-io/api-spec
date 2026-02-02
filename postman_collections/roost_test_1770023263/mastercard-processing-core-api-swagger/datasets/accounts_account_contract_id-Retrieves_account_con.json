@@ -1,0 +1,77 @@
+[
+  {
+    "account_contract": "AC123456",
+    "statusCode": 200,
+    "scenario": "The account contract status has been retrieved successfully."
+  },
+  {
+    "account_contract": "AC789012",
+    "statusCode": 200,
+    "scenario": "The account contract status has been retrieved successfully."
+  },
+  {
+    "account_contract": "AC345678",
+    "statusCode": 200,
+    "scenario": "The account contract status has been retrieved successfully."
+  },
+  {
+    "account_contract": "AC901234",
+    "statusCode": 200,
+    "scenario": "The account contract status has been retrieved successfully."
+  },
+  {
+    "account_contract": "AC567890",
+    "statusCode": 200,
+    "scenario": "The account contract status has been retrieved successfully."
+  },
+  {
+    "account_contract": "AC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "AC789012",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "INVALID_CONTRACT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "AC345678",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "AC901234",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "AC567890",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "AC999999",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "AC888888",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "AC777777",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

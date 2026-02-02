@@ -1,0 +1,77 @@
+[
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "9876543210987654",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "1234-5678-9012-3456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "0000000000000000",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "1111222233334444",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "abcd-efgh-ijkl-mnop",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "9999999999999999",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "2222333344445555",
+    "statusCode": 200,
+    "scenario": "The list of card plastics has been successfully fetched."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "8888888888888888",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

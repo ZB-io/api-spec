@@ -1,0 +1,104 @@
+[
+  {
+    "client": "client123",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "client456",
+    "limit": 50,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "client789",
+    "limit": 100,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The list of account contracts for a specified client has been fetched successfully."
+  },
+  {
+    "client": "client123",
+    "limit": 101,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client456",
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client789",
+    "limit": 0,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client123",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "client456",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "client789",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client123",
+    "limit": "ten",
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client456",
+    "limit": 10,
+    "offset": "zero",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "client789",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "client000",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "client999",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

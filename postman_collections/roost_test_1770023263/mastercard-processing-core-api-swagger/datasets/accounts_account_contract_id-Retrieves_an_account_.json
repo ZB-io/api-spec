@@ -1,0 +1,77 @@
+[
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 200,
+    "scenario": "An account contract has been successfully fetched."
+  },
+  {
+    "account_contract": "ACC987654",
+    "statusCode": 200,
+    "scenario": "An account contract has been successfully fetched."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "INVALID_CONTRACT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC000000",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 200,
+    "scenario": "An account contract has been successfully fetched."
+  },
+  {
+    "account_contract": "ACC654321",
+    "statusCode": 200,
+    "scenario": "An account contract has been successfully fetched."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACCINVALID",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC999999",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC123456",
+    "statusCode": 200,
+    "scenario": "An account contract has been successfully fetched."
+  }
+]

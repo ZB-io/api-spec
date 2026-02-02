@@ -1,0 +1,77 @@
+[
+  {
+    "card_contract": "CC123456",
+    "statusCode": 200,
+    "scenario": "The card contract status has been retrieved successfully."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 200,
+    "scenario": "The card contract status has been retrieved successfully."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 200,
+    "scenario": "The card contract status has been retrieved successfully."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 200,
+    "scenario": "The card contract status has been retrieved successfully."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 200,
+    "scenario": "The card contract status has been retrieved successfully."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "CC123456",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

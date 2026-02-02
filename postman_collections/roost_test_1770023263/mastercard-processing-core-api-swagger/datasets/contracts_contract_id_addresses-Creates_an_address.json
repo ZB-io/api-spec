@@ -1,0 +1,172 @@
+[
+  {
+    "contract": "12345",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "addressType": "billing",
+    "addressLine1": "123 Main St",
+    "city": "New York",
+    "country": "USA",
+    "postalCode": "10001",
+    "statusCode": 200,
+    "scenario": "The address for a contract has been successfully created."
+  },
+  {
+    "contract": "67890",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "addressType": "shipping",
+    "addressLine1": "456 Elm St",
+    "addressLine2": "Apt 2B",
+    "city": "Los Angeles",
+    "country": "USA",
+    "postalCode": "90001",
+    "state": "CA",
+    "email": "example@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "statusCode": 200,
+    "scenario": "The address for a contract has been successfully created."
+  },
+  {
+    "contract": "54321",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "addressType": "billing",
+    "addressLine1": "789 Pine St",
+    "city": "Chicago",
+    "country": "USA",
+    "postalCode": "60601",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "98765",
+    "Idempotency-Key": "invalid-uuid",
+    "addressType": "billing",
+    "addressLine1": "321 Oak St",
+    "city": "Houston",
+    "country": "USA",
+    "postalCode": "77001",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "11223",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "addressType": "billing",
+    "addressLine1": "654 Maple St",
+    "city": "Phoenix",
+    "country": "USA",
+    "postalCode": "85001",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "44556",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "addressType": "billing",
+    "addressLine1": "987 Cedar St",
+    "city": "Philadelphia",
+    "country": "USA",
+    "postalCode": "19101",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "77889",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "addressType": "billing",
+    "addressLine1": "123 Birch St",
+    "city": "San Antonio",
+    "country": "USA",
+    "postalCode": "78201",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "99000",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "addressType": "billing",
+    "addressLine1": "456 Spruce St",
+    "city": "San Diego",
+    "country": "USA",
+    "postalCode": "92101",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "11111",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "addressType": "billing",
+    "addressLine1": "789 Willow St",
+    "city": "Dallas",
+    "country": "USA",
+    "postalCode": "75201",
+    "statusCode": 200,
+    "scenario": "The address for a contract has been successfully created."
+  },
+  {
+    "contract": "22222",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "addressType": "billing",
+    "addressLine1": "321 Ash St",
+    "city": "San Jose",
+    "country": "USA",
+    "postalCode": "95101",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "33333",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "addressType": "billing",
+    "addressLine1": "654 Poplar St",
+    "city": "Austin",
+    "country": "USA",
+    "postalCode": "73301",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "44444",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "addressType": "billing",
+    "addressLine1": "987 Fir St",
+    "city": "Jacksonville",
+    "country": "USA",
+    "postalCode": "32099",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "55555",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "addressType": "billing",
+    "addressLine1": "123 Redwood St",
+    "city": "Fort Worth",
+    "country": "USA",
+    "postalCode": "76101",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "66666",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "addressType": "billing",
+    "addressLine1": "456 Cypress St",
+    "city": "Columbus",
+    "country": "USA",
+    "postalCode": "43085",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "77777",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "addressType": "billing",
+    "addressLine1": "789 Palm St",
+    "city": "Charlotte",
+    "country": "USA",
+    "postalCode": "28201",
+    "statusCode": 200,
+    "scenario": "The address for a contract has been successfully created."
+  }
+]

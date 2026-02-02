@@ -1,0 +1,139 @@
+[
+  {
+    "contract": "contract_001",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "statusCode": 200,
+    "scenario": "The custom data for a contract has been successfully set up."
+  },
+  {
+    "contract": "contract_002",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "_0.tagContainer": "container_001",
+    "_0.tagName": "tagName_001",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_001",
+    "statusCode": 200,
+    "scenario": "The custom data for a contract has been successfully set up."
+  },
+  {
+    "contract": "contract_003",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_004",
+    "Idempotency-Key": "invalid-uuid",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_005",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "_0.tagContainer": "invalid_container",
+    "_0.tagName": "tagName_002",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_002",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "contract_006",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "_0.tagContainer": "container_002",
+    "_0.tagName": "tagName_003",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_003",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "contract_007",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "_0.tagContainer": "container_003",
+    "_0.tagName": "tagName_004",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_004",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "contract_008",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "_0.tagContainer": "container_004",
+    "_0.tagName": "tagName_005",
+    "_0.removeTag": true,
+    "_0.tagValue": "tagValue_005",
+    "statusCode": 200,
+    "scenario": "The custom data for a contract has been successfully set up."
+  },
+  {
+    "contract": "contract_009",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "_0.tagContainer": "container_005",
+    "_0.tagName": "tagName_006",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_006",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "contract_010",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "_0.tagContainer": "container_006",
+    "_0.tagName": "tagName_007",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_007",
+    "statusCode": 200,
+    "scenario": "The custom data for a contract has been successfully set up."
+  },
+  {
+    "contract": "contract_011",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "_0.tagContainer": "container_007",
+    "_0.tagName": "tagName_008",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_008",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "contract_012",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "_0.tagContainer": "container_008",
+    "_0.tagName": "tagName_009",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_009",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "contract_013",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "_0.tagContainer": "container_009",
+    "_0.tagName": "tagName_010",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_010",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "contract_014",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "_0.tagContainer": "container_010",
+    "_0.tagName": "tagName_011",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_011",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "contract_015",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "_0.tagContainer": "container_011",
+    "_0.tagName": "tagName_012",
+    "_0.removeTag": false,
+    "_0.tagValue": "tagValue_012",
+    "statusCode": 200,
+    "scenario": "The custom data for a contract has been successfully set up."
+  }
+]

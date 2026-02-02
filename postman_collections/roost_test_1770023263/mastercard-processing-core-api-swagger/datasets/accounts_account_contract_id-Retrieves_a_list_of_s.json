@@ -1,0 +1,105 @@
+[
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of subaccounts has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC789012",
+    "limit": 50,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of subaccounts has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC345678",
+    "limit": 100,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The list of subaccounts has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC901234",
+    "limit": 1,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of subaccounts has been fetched successfully."
+  },
+  {
+    "account_contract": "ACC567890",
+    "limit": 20,
+    "offset": 2,
+    "statusCode": 200,
+    "scenario": "The list of subaccounts has been fetched successfully."
+  },
+  {
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 150,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "INVALID_CONTRACT",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 0,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": 1000000000000,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "account_contract": "ACC123456",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

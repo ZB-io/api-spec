@@ -1,0 +1,104 @@
+[
+  {
+    "transaction": "TX123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 201,
+    "scenario": "The transaction has been successfully reversed."
+  },
+  {
+    "transaction": "TX987654321",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "statusCode": 201,
+    "scenario": "The transaction has been successfully reversed."
+  },
+  {
+    "transaction": "TX112233445",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "reason": "MP_API_CLOSE_EVENT",
+    "statusCode": 201,
+    "scenario": "The transaction has been successfully reversed."
+  },
+  {
+    "transaction": "TX556677889",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TX998877665",
+    "Idempotency-Key": "invalid-uuid",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TX223344556",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "reason": "INVALID_REASON",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TX334455667",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "transaction": "TX445566778",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "transaction": "TX556677889",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "transaction": "TX667788990",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "transaction": "TX778899001",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "statusCode": 201,
+    "scenario": "The transaction has been successfully reversed."
+  },
+  {
+    "transaction": "TX889900112",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 201,
+    "scenario": "The transaction has been successfully reversed."
+  },
+  {
+    "transaction": "TX990011223",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TX001122334",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "transaction": "TX112233445",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "reason": "MP_API_OPEN_EVENT",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

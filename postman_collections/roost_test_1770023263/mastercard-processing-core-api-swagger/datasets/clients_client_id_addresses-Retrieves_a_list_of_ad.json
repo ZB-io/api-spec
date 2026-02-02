@@ -1,0 +1,76 @@
+[
+  {
+    "client": "ClientA",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "ClientB",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "ClientC",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "ClientD",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "client": "ClientE",
+    "statusCode": 200,
+    "scenario": "The list of client addresses has been fetched successfully."
+  },
+  {
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "InvalidClient",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientF",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientG",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientH",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "NonExistentClient",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientI",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientJ",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientK",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

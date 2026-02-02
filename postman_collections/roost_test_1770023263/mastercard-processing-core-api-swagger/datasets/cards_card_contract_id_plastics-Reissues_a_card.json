@@ -1,0 +1,115 @@
+[
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully reissued."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCardContractNumber": "5355840352135312",
+    "newCardExpiryDate": "3004",
+    "newCbsNumber": "CBS15863242747061",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully reissued."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "invalid-uuid",
+    "reissueType": "REISSUE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCardContractNumber": "INVALID_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCardExpiryDate": "INVALID_DATE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCbsNumber": "INVALID_CBS",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCardContractNumber": "5355840352135312",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully reissued."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCardExpiryDate": "3004",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully reissued."
+  },
+  {
+    "card_contract": "1234567890123456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "reissueType": "REISSUE",
+    "newCbsNumber": "CBS15863242747061",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully reissued."
+  }
+]
