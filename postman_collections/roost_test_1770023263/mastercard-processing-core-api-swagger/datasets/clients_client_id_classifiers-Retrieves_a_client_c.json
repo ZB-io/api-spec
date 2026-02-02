@@ -1,0 +1,90 @@
+[
+  {
+    "client": "ClientA",
+    "classifier": "Type1",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientB",
+    "classifier": "Type2",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientC",
+    "classifier": "Type3",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientD",
+    "classifier": "Type4",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientE",
+    "classifier": "Type5",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientF",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "classifier": "Type6",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientG",
+    "classifier": "InvalidType",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "InvalidClient",
+    "classifier": "Type7",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientH",
+    "classifier": "Type8",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientI",
+    "classifier": "Type9",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientJ",
+    "classifier": "Type10",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientK",
+    "classifier": "Type11",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientL",
+    "classifier": "Type12",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  },
+  {
+    "client": "ClientM",
+    "classifier": "Type13",
+    "statusCode": 200,
+    "scenario": "The list of client classifiers has been fetched successfully."
+  }
+]

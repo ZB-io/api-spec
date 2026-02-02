@@ -1,0 +1,90 @@
+[
+  {
+    "contract": "standard",
+    "usage_limit": 1000,
+    "statusCode": 200,
+    "scenario": "The list of usage limits has been fetched successfully."
+  },
+  {
+    "contract": "premium",
+    "usage_limit": 5000,
+    "statusCode": 200,
+    "scenario": "The list of usage limits has been fetched successfully."
+  },
+  {
+    "contract": "enterprise",
+    "usage_limit": 10000,
+    "statusCode": 200,
+    "scenario": "The list of usage limits has been fetched successfully."
+  },
+  {
+    "contract": "standard",
+    "usage_limit": 1000,
+    "statusCode": 200,
+    "scenario": "The list of usage limits has been fetched successfully."
+  },
+  {
+    "contract": "basic",
+    "usage_limit": 500,
+    "statusCode": 200,
+    "scenario": "The list of usage limits has been fetched successfully."
+  },
+  {
+    "contract": "standard",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "usage_limit": 1000,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "invalid_contract",
+    "usage_limit": 1000,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "standard",
+    "usage_limit": -100,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "standard",
+    "usage_limit": "one thousand",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "premium",
+    "usage_limit": 5000,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "enterprise",
+    "usage_limit": 10000,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "standard",
+    "usage_limit": 1000,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "premium",
+    "usage_limit": 5000,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "enterprise",
+    "usage_limit": 10000,
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

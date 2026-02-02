@@ -1,0 +1,124 @@
+[
+  {
+    "contract": "C12345",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C67890",
+    "limit": 20,
+    "offset": 5,
+    "personalisation": "basic",
+    "tariff": "T001",
+    "tariff_domain": "energy",
+    "tariff_type": "fixed",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C54321",
+    "limit": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C98765",
+    "limit": 101,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C13579",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C24680",
+    "limit": 10,
+    "offset": 0,
+    "tariff": "T999",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C11223",
+    "limit": 10,
+    "offset": 0,
+    "tariff_domain": "invalid_domain",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C44556",
+    "limit": 10,
+    "offset": 0,
+    "tariff_type": "invalid_type",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C77889",
+    "limit": 10,
+    "offset": 0,
+    "personalisation": "advanced",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C99887",
+    "limit": 10,
+    "offset": 0,
+    "tariff": "T002",
+    "tariff_domain": "water",
+    "tariff_type": "variable",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C77665",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C55443",
+    "limit": 10,
+    "offset": 0,
+    "tariff": "T003",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C33221",
+    "limit": 10,
+    "offset": 0,
+    "tariff_domain": "gas",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C11009",
+    "limit": 10,
+    "offset": 0,
+    "tariff_type": "fixed",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  },
+  {
+    "contract": "C99876",
+    "limit": 10,
+    "offset": 0,
+    "personalisation": "premium",
+    "tariff": "T004",
+    "tariff_domain": "electricity",
+    "tariff_type": "fixed",
+    "statusCode": 200,
+    "scenario": "The contract tariffs has been fetched successfully."
+  }
+]

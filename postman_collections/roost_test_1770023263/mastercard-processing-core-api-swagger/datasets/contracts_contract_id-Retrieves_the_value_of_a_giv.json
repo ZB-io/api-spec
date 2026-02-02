@@ -1,0 +1,105 @@
+[
+  {
+    "contract": "standard",
+    "authentication_parameter": "token123",
+    "authentication_type": "OAuth",
+    "statusCode": 200,
+    "scenario": "The authentication parameter value has been fetched successfully."
+  },
+  {
+    "contract": "premium",
+    "authentication_parameter": "token456",
+    "authentication_type": "APIKey",
+    "statusCode": 200,
+    "scenario": "The authentication parameter value has been fetched successfully."
+  },
+  {
+    "contract": "basic",
+    "authentication_parameter": "token789",
+    "authentication_type": "OAuth",
+    "statusCode": 200,
+    "scenario": "The authentication parameter value has been fetched successfully."
+  },
+  {
+    "contract": "standard",
+    "authentication_parameter": "token123",
+    "statusCode": 200,
+    "scenario": "The authentication parameter value has been fetched successfully."
+  },
+  {
+    "contract": "premium",
+    "authentication_parameter": "token456",
+    "authentication_type": "APIKey",
+    "statusCode": 200,
+    "scenario": "The authentication parameter value has been fetched successfully."
+  },
+  {
+    "contract": "standard",
+    "authentication_type": "OAuth",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "premium",
+    "authentication_parameter": "invalid_token",
+    "authentication_type": "APIKey",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "invalid_contract",
+    "authentication_parameter": "token123",
+    "authentication_type": "OAuth",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "standard",
+    "authentication_parameter": "token123",
+    "authentication_type": "InvalidType",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "premium",
+    "authentication_parameter": "token456",
+    "authentication_type": "APIKey",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "basic",
+    "authentication_parameter": "token789",
+    "authentication_type": "OAuth",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "standard",
+    "authentication_parameter": "token123",
+    "authentication_type": "OAuth",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "premium",
+    "authentication_parameter": "token456",
+    "authentication_type": "APIKey",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "basic",
+    "authentication_parameter": "token789",
+    "authentication_type": "OAuth",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "standard",
+    "authentication_parameter": "token123",
+    "authentication_type": "OAuth",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

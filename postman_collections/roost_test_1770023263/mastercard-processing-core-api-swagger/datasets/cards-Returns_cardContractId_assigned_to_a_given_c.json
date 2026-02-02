@@ -1,0 +1,105 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "cardContractIdentifier": "CBS83863371812034",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The card contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "cardContractIdentifier": "CBS83863371812035",
+    "cardContractIdentifierType": "CARD_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The card contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "cardContractIdentifier": "CBS83863371812036",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "cardContractIdentifier": "INVALID_IDENTIFIER",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "cardContractIdentifier": "CBS83863371812037",
+    "cardContractIdentifierType": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "cardContractIdentifier": "CBS83863371812038",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "cardContractIdentifier": "CBS83863371812039",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "cardContractIdentifier": "CBS83863371812040",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "cardContractIdentifier": "CBS83863371812041",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "cardContractIdentifier": "CBS83863371812042",
+    "cardContractIdentifierType": "CARD_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The card contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "cardContractIdentifier": "CBS83863371812043",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "cardContractIdentifier": "CBS83863371812044",
+    "cardContractIdentifierType": "INVALID_ENUM",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "cardContractIdentifier": "CBS83863371812045",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba84",
+    "cardContractIdentifier": "CBS83863371812046",
+    "cardContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

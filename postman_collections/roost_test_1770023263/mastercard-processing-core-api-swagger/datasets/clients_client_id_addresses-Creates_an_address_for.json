@@ -1,0 +1,166 @@
+[
+  {
+    "client": "ClientA",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "addressType": "Home",
+    "addressLine1": "123 Main St",
+    "city": "Metropolis",
+    "country": "USA",
+    "postalCode": "12345",
+    "statusCode": 200,
+    "scenario": "The address for a client has been successfully created."
+  },
+  {
+    "client": "ClientB",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "addressType": "Office",
+    "addressLine1": "456 Elm St",
+    "addressLine2": "Suite 100",
+    "city": "Gotham",
+    "country": "USA",
+    "postalCode": "54321",
+    "state": "NY",
+    "statusCode": 200,
+    "scenario": "The address for a client has been successfully created."
+  },
+  {
+    "client": "ClientC",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "addressLine1": "789 Maple Ave",
+    "city": "Star City",
+    "country": "USA",
+    "postalCode": "67890",
+    "statusCode": 200,
+    "scenario": "The address for a client has been successfully created."
+  },
+  {
+    "client": "ClientD",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "addressType": "InvalidType",
+    "addressLine1": "101 Oak St",
+    "city": "Central City",
+    "country": "USA",
+    "postalCode": "98765",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientE",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "city": "Coast City",
+    "country": "USA",
+    "postalCode": "11223",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientF",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "addressType": "Home",
+    "addressLine1": "202 Pine St",
+    "city": "Blüdhaven",
+    "country": "USA",
+    "postalCode": "33445",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientG",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "addressType": "Home",
+    "addressLine1": "303 Cedar St",
+    "city": "National City",
+    "country": "USA",
+    "postalCode": "55667",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientH",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "addressType": "Home",
+    "addressLine1": "404 Birch St",
+    "city": "Fawcett City",
+    "country": "USA",
+    "postalCode": "77889",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "client": "ClientI",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "addressType": "Home",
+    "addressLine1": "505 Spruce St",
+    "city": "Keystone City",
+    "country": "USA",
+    "postalCode": "99001",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "client": "ClientJ",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "addressType": "Home",
+    "addressLine1": "606 Willow St",
+    "city": "Smallville",
+    "country": "USA",
+    "postalCode": "22334",
+    "statusCode": 200,
+    "scenario": "The address for a client has been successfully created."
+  },
+  {
+    "client": "ClientK",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "addressType": "Home",
+    "addressLine1": "707 Ash St",
+    "city": "Hub City",
+    "country": "USA",
+    "postalCode": "44556",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientL",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "addressType": "Home",
+    "addressLine1": "808 Poplar St",
+    "city": "Opal City",
+    "country": "USA",
+    "postalCode": "66778",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientM",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "addressType": "Home",
+    "addressLine1": "909 Redwood St",
+    "city": "Gateway City",
+    "country": "USA",
+    "postalCode": "88990",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientN",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "addressType": "Home",
+    "addressLine1": "1010 Cypress St",
+    "city": "Ivy Town",
+    "country": "USA",
+    "postalCode": "11212",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "client": "ClientO",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba84",
+    "addressType": "Home",
+    "addressLine1": "1111 Fir St",
+    "city": "Midway City",
+    "country": "USA",
+    "postalCode": "33443",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  }
+]

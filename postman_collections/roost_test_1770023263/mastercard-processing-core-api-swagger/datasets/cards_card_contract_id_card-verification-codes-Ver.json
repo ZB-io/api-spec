@@ -1,0 +1,120 @@
+[
+  {
+    "card_contract": "contract_123",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "cardVerificationCode": "347",
+    "cardExpiryDate": "3004",
+    "statusCode": 200,
+    "scenario": "The CVC2 verification result has been fetched successfully."
+  },
+  {
+    "card_contract": "contract_456",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "cardVerificationCode": "123",
+    "cardExpiryDate": "2505",
+    "statusCode": 200,
+    "scenario": "The CVC2 verification result has been fetched successfully."
+  },
+  {
+    "card_contract": "contract_789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "cardVerificationCode": "456",
+    "statusCode": 200,
+    "scenario": "The CVC2 verification result has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "cardVerificationCode": "789",
+    "cardExpiryDate": "2406",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "contract_101",
+    "Idempotency-Key": "invalid-uuid",
+    "cardVerificationCode": "012",
+    "cardExpiryDate": "2307",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "contract_102",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "cardVerificationCode": "9999",
+    "cardExpiryDate": "2208",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "contract_103",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "cardVerificationCode": "000",
+    "cardExpiryDate": "2109",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "contract_104",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "cardVerificationCode": "111",
+    "cardExpiryDate": "2010",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "contract_105",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "cardVerificationCode": "222",
+    "cardExpiryDate": "1911",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "card_contract": "contract_106",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "cardVerificationCode": "333",
+    "cardExpiryDate": "1812",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "card_contract": "contract_107",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "cardVerificationCode": "444",
+    "cardExpiryDate": "1713",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "card_contract": "contract_108",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "cardVerificationCode": "555",
+    "cardExpiryDate": "1614",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "card_contract": "contract_109",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "cardVerificationCode": "666",
+    "cardExpiryDate": "1515",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "card_contract": "contract_110",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "cardVerificationCode": "777",
+    "cardExpiryDate": "1416",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "card_contract": "contract_111",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "cardVerificationCode": "888",
+    "cardExpiryDate": "1317",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  }
+]

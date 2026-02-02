@@ -1,0 +1,144 @@
+[
+  {
+    "contract": "C12345",
+    "date": "2023-10-01",
+    "authorized": "Y",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  },
+  {
+    "contract": "C67890",
+    "date": "2023-10-02",
+    "authorized": "N",
+    "limit": 50,
+    "offset": 10,
+    "transaction_type": "credit",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  },
+  {
+    "contract": "C54321",
+    "date": "2023-10-03",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "debit",
+    "authorization_filter": "active",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  },
+  {
+    "contract": "C98765",
+    "date": "2023-10-04",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C11223",
+    "date": "2023-10-05",
+    "authorized": "X",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C44556",
+    "date": "2023-10-06",
+    "authorized": "Y",
+    "limit": 150,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C77889",
+    "date": "2023-10-07",
+    "authorized": "N",
+    "offset": -5,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C99887",
+    "date": "2023-10-08",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "invalid_type",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "C77665",
+    "date": "2023-10-09",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "credit",
+    "authorization_filter": "inactive",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C55443",
+    "date": "2023-10-10",
+    "authorized": "N",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "debit",
+    "authorization_filter": "active",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "C33221",
+    "date": "2023-10-11",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "credit",
+    "authorization_filter": "active",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C11009",
+    "date": "2023-10-12",
+    "authorized": "N",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "debit",
+    "authorization_filter": "active",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "C22334",
+    "date": "2023-10-13",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "credit",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  },
+  {
+    "contract": "C55667",
+    "date": "2023-10-14",
+    "authorized": "N",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "debit",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  },
+  {
+    "contract": "C88990",
+    "date": "2023-10-15",
+    "authorized": "Y",
+    "limit": 10,
+    "offset": 0,
+    "transaction_type": "credit",
+    "authorization_filter": "active",
+    "statusCode": 200,
+    "scenario": "The list of transactions has been fetched successfully."
+  }
+]

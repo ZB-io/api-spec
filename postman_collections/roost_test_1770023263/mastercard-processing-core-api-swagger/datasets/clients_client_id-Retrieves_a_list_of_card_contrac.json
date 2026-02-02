@@ -1,0 +1,132 @@
+[
+  {
+    "client": "ClientA",
+    "creation_date": "2023-10-01",
+    "statuses": [
+      "active",
+      "inactive"
+    ],
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientB",
+    "creation_date": "2023-09-15",
+    "limit": 20,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientC",
+    "statuses": [
+      "pending"
+    ],
+    "limit": 5,
+    "offset": 2,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientD",
+    "creation_date": "2023-08-20",
+    "statuses": [
+      "active"
+    ],
+    "limit": 15,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientE",
+    "limit": 50,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientF",
+    "creation_date": "2023-07-10",
+    "statuses": [
+      "inactive"
+    ],
+    "limit": 1,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientG",
+    "creation_date": "2023-06-05",
+    "limit": 100,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientH",
+    "statuses": [
+      "active",
+      "pending"
+    ],
+    "limit": 30,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientI",
+    "creation_date": "2023-05-25",
+    "limit": 10,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientJ",
+    "statuses": [
+      "inactive"
+    ],
+    "limit": 25,
+    "offset": 3,
+    "statusCode": 200,
+    "scenario": "The list of card contracts has been fetched successfully."
+  },
+  {
+    "client": "ClientK",
+    "creation_date": "2023-04-15",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientL",
+    "statuses": [
+      "unknown"
+    ],
+    "limit": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientM",
+    "limit": 101,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientN",
+    "creation_date": "invalid-date",
+    "limit": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientO",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

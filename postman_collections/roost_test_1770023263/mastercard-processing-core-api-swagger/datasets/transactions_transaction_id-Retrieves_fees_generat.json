@@ -1,0 +1,77 @@
+[
+  {
+    "transaction": "TXN123456",
+    "statusCode": 200,
+    "scenario": "The list of transaction fees has been fetched successfully."
+  },
+  {
+    "transaction": "TXN789012",
+    "statusCode": 200,
+    "scenario": "The list of transaction fees has been fetched successfully."
+  },
+  {
+    "transaction": "TXN345678",
+    "statusCode": 200,
+    "scenario": "The list of transaction fees has been fetched successfully."
+  },
+  {
+    "transaction": "TXN901234",
+    "statusCode": 200,
+    "scenario": "The list of transaction fees has been fetched successfully."
+  },
+  {
+    "transaction": "TXN567890",
+    "statusCode": 200,
+    "scenario": "The list of transaction fees has been fetched successfully."
+  },
+  {
+    "transaction": "TXN123456",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "INVALID_TXN",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TXN789012",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TXN345678",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "transaction": "TXN901234",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "transaction": "TXN567890",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "transaction": "TXN000000",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "transaction": "TXN111111",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "transaction": "TXN222222",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction": "TXN333333",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

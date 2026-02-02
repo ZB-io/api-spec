@@ -1,0 +1,136 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "accountContractId": 60001,
+    "clientId": 40000,
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "accountContractId": 60002,
+    "clientId": 40001,
+    "cardContract.productCode": "PROD123",
+    "cardContract.branchCode": "BR001",
+    "cardContract.cardContractNumber": "1234567890123456",
+    "cardContract.cardContractName": "Gold Card",
+    "cardContract.cardSubtypeCode": "GOLD",
+    "cardContract.cbsNumber": "CBS123456",
+    "cardContract.currency": "USD",
+    "cardContract.embossedData.companyName": "Company Inc.",
+    "cardContract.embossedData.firstName": "John",
+    "cardContract.embossedData.lastName": "Doe",
+    "cardContract.embossedData.title": "Mr.",
+    "cardContract.cardExpiryDate": "2025-12-31",
+    "cardContract.productionCode": "PROD001",
+    "cardContractCustomData_0.tagContainer": "Container1",
+    "cardContractCustomData_0.tagName": "Tag1",
+    "cardContractCustomData_0.removeTag": false,
+    "cardContractCustomData_0.tagValue": "Value1",
+    "cardContractCustomData_1.tagContainer": "Container2",
+    "cardContractCustomData_1.tagName": "Tag2",
+    "cardContractCustomData_1.removeTag": true,
+    "cardContractCustomData_1.tagValue": "Value2",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "accountContractId": 60003,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "invalid-uuid",
+    "accountContractId": 60004,
+    "clientId": 40002,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "accountContractId": 60005,
+    "clientId": 40003,
+    "cardContract.productCode": "INVALID_CODE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "accountContractId": 60006,
+    "clientId": 40004,
+    "cardContract.branchCode": "BR002",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "accountContractId": 60007,
+    "clientId": 40005,
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "accountContractId": 60008,
+    "clientId": 40006,
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "accountContractId": 60009,
+    "clientId": 40007,
+    "cardContract.cardContractNumber": "INVALID_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "accountContractId": 60010,
+    "clientId": 40008,
+    "cardContract.embossedData.firstName": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "accountContractId": 60011,
+    "clientId": 40009,
+    "cardContract.embossedData.lastName": "Smith",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "accountContractId": 60012,
+    "clientId": 40010,
+    "cardContract.embossedData.title": "Dr.",
+    "statusCode": 201,
+    "scenario": "The card contract has been successfully created, see the \"Location\" header."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "accountContractId": 60013,
+    "clientId": 40011,
+    "cardContract.cardExpiryDate": "2023-01-01",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "accountContractId": 60014,
+    "clientId": 40012,
+    "cardContract.productionCode": "INVALID_PROD",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "accountContractId": 60015,
+    "clientId": 40013,
+    "cardContractCustomData_0.tagName": "InvalidTag",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  }
+]

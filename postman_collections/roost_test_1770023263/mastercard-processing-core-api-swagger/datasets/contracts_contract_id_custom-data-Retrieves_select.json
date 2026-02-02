@@ -1,0 +1,91 @@
+[
+  {
+    "contract": "CON12345",
+    "tag": "TAG001",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON67890",
+    "tag": "TAG002",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON54321",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON98765",
+    "tag": "TAG_INVALID",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "INVALID_CONTRACT",
+    "tag": "TAG003",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "CON11223",
+    "tag": "TAG004",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON33445",
+    "tag": "TAG005",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON55667",
+    "tag": "TAG006",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON77889",
+    "tag": "TAG007",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON99000",
+    "tag": "TAG008",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON11122",
+    "tag": "TAG009",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON33344",
+    "tag": "TAG010",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON55566",
+    "tag": "TAG011",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON77788",
+    "tag": "TAG012",
+    "statusCode": 200,
+    "scenario": "The list of contract custom data tags has been fetched successfully."
+  },
+  {
+    "contract": "CON99900",
+    "tag": "TAG013",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

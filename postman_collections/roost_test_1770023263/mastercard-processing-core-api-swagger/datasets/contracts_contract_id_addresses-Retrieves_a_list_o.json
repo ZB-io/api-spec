@@ -1,0 +1,77 @@
+[
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 200,
+    "scenario": "The list of contract addresses has been fetched successfully."
+  },
+  {
+    "contract": "0xabcdefabcdefabcdefabcdefabcdefabcdef",
+    "statusCode": 200,
+    "scenario": "The list of contract addresses has been fetched successfully."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "0x12345",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "0xabcdefabcdefabcdefabcdefabcdefabcdef",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "0xabcdefabcdefabcdefabcdefabcdefabcdef",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 200,
+    "scenario": "The list of contract addresses has been fetched successfully."
+  },
+  {
+    "contract": "0xabcdefabcdefabcdefabcdefabcdefabcdef",
+    "statusCode": 200,
+    "scenario": "The list of contract addresses has been fetched successfully."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "0x12345",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "0xabcdefabcdefabcdefabcdefabcdefabcdef",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "0x1234567890abcdef1234567890abcdef12345678",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

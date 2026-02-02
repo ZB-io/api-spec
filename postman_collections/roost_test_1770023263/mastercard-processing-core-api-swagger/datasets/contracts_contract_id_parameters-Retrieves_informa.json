@@ -1,0 +1,92 @@
+[
+  {
+    "contract": "basic",
+    "parameter": "value1",
+    "statusCode": 200,
+    "scenario": "The list of parameters has been fetched successfully."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value2",
+    "statusCode": 200,
+    "scenario": "The list of parameters has been fetched successfully."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value3",
+    "statusCode": 200,
+    "scenario": "The list of parameters has been fetched successfully."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value4",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value5",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "invalid_contract",
+    "parameter": "value6",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value7",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value8",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value9",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value10",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value11",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value12",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "basic",
+    "parameter": "value13",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "premium",
+    "parameter": "value14",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "invalid_contract",
+    "parameter": "value15",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

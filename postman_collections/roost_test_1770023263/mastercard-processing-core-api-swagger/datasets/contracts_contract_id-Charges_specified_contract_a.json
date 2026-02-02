@@ -1,0 +1,163 @@
+[
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  },
+  {
+    "contract": "987654321",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "feeTypeId": "MB_2",
+    "amount": 200,
+    "currency": "USD",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "feeTypeId": "MB_3",
+    "uniqueReferenceNumber": "122357012767",
+    "amount": 300,
+    "currency": "GBP",
+    "postingDate": "2031-07-01",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  },
+  {
+    "contract": "123456789",
+    "feeTypeId": "MB_1",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "invalid-uuid",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 1000000000000000000,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "XYZ",
+    "postingDate": "2031-06-25",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "invalid-date",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  },
+  {
+    "contract": "123456789",
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "feeTypeId": "MB_1",
+    "uniqueReferenceNumber": "122357012766",
+    "amount": 100,
+    "currency": "EUR",
+    "postingDate": "2031-06-25",
+    "statusCode": 201,
+    "scenario": "The contract has been charged successfully."
+  }
+]

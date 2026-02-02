@@ -1,0 +1,90 @@
+[
+  {
+    "client": "ClientA",
+    "tag": "Tag1",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientB",
+    "tag": "Tag2",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientC",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientD",
+    "tag": "Tag3",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientE",
+    "tag": "InvalidTag",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientF",
+    "tag": "Tag4",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientG",
+    "tag": "Tag5",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientH",
+    "tag": "Tag6",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientI",
+    "tag": "Tag7",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientJ",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientK",
+    "tag": "Tag8",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "client": "ClientL",
+    "tag": "Tag9",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "client": "ClientM",
+    "tag": "Tag10",
+    "statusCode": 200,
+    "scenario": "The list of client custom data tags has been fetched successfully."
+  },
+  {
+    "client": "ClientN",
+    "tag": "Tag11",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "client": "ClientO",
+    "tag": "Tag12",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  }
+]

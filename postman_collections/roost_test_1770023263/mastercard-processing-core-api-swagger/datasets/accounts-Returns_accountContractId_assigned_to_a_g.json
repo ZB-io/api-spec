@@ -1,0 +1,105 @@
+[
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "accountContractIdentifier": "CBS83863371812033",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba71",
+    "accountContractIdentifier": "CBS83863371812034",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba72",
+    "accountContractIdentifier": "CBS83863371812035",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "invalid-uuid",
+    "accountContractIdentifier": "CBS83863371812036",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba73",
+    "accountContractIdentifier": "CBS83863371812037",
+    "accountContractIdentifierType": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba74",
+    "accountContractIdentifier": "CBS83863371812038",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba75",
+    "accountContractIdentifier": "CBS83863371812039",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba76",
+    "accountContractIdentifier": "CBS83863371812040",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba77",
+    "accountContractIdentifier": "CBS83863371812041",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba78",
+    "accountContractIdentifier": "CBS83863371812042",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba79",
+    "accountContractIdentifier": "CBS83863371812043",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba80",
+    "accountContractIdentifier": "CBS83863371812044",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba81",
+    "accountContractIdentifier": "CBS83863371812045",
+    "accountContractIdentifierType": "INVALID_TYPE",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba82",
+    "accountContractIdentifier": "CBS83863371812046",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba83",
+    "accountContractIdentifier": "CBS83863371812047",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  }
+]

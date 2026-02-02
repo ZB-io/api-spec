@@ -1,0 +1,104 @@
+[
+  {
+    "transaction_selector": "all",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "recent",
+    "limit": 5,
+    "offset": 2,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 100,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "invalid_selector",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 101,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 10,
+    "offset": -1,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 10,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 0,
+    "offset": 0,
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 10,
+    "offset": 0,
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 50,
+    "offset": 5,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "recent",
+    "limit": 20,
+    "offset": 10,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "recent",
+    "limit": 1,
+    "offset": 0,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  },
+  {
+    "transaction_selector": "all",
+    "limit": 10,
+    "offset": 1000,
+    "statusCode": 200,
+    "scenario": "The list of transaction documents has been fetched successfully."
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "data_type_to": "RSA",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "RSA",
+    "additional_field": "optional_value",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "DSA",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "data_type_to": "invalid_type",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "data_type_to": "",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "data_type_to": "ECDSA",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "RSA",
+    "additional_field": "another_optional_value",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "data_type_to": "invalid_enum",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "RSA",
+    "additional_field": "yet_another_optional_value",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "data_type_to": "RSA",
+    "statusCode": 200,
+    "scenario": "The RSA key has been successfully fetched."
+  }
+]
