@@ -1,0 +1,105 @@
+[
+  {
+    "q": "London",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "q": "New York,US",
+    "dt": "2025-08-19",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "q": "Tokyo,JP",
+    "dt": "2024-12-31",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "q": "Sydney,AU",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "q": "São Paulo,BR",
+    "dt": "2023-07-15",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "q": "Berlin,DE",
+    "dt": "2022-05-10",
+    "statusCode": 200,
+    "scenario": "Ok"
+  },
+  {
+    "dt": "2024-01-01",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "Paris,FR",
+    "dt": "2024/01/01",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "Xyzville,ZZ",
+    "dt": "2025-02-28",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "City01|City02|City03|City04|City05|City06|City07|City08|City09|City10|City11|City12|City13|City14|City15|City16|City17|City18|City19|City20|City21|City22|City23|City24|City25|City26|City27|City28|City29|City30|City31|City32|City33|City34|City35|City36|City37|City38|City39|City40|City41|City42|City43|City44|City45|City46|City47|City48|City49|City50|City51",
+    "dt": "2023-10-10",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "Madrid,ES",
+    "dt": "2024-02-30",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "!!!@@@###",
+    "dt": "2023-09-01",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "Rome,IT",
+    "dt": "2026-03-27",
+    "statusCode": 400,
+    "scenario": "Error code 1003: Parameter 'q' not provided.<br />Error code 1005: API request url is invalid.<br />Error code 1006: No location found matching parameter 'q'<br />Error code 9000: Json body passed in bulk request is invalid. Please make sure it is valid json with utf-8 encoding.<br />Error code 9001: Json body contains too many locations for bulk request. Please keep it below 50 in a single request.<br />Error code 9999: Internal application error."
+  },
+  {
+    "q": "Toronto,CA",
+    "dt": "2025-06-01",
+    "statusCode": 401,
+    "scenario": "Error code 1002: API key not provided.<br />Error code 2006: API key provided is invalid"
+  },
+  {
+    "q": "Dublin,IE",
+    "statusCode": 401,
+    "scenario": "Error code 1002: API key not provided.<br />Error code 2006: API key provided is invalid"
+  },
+  {
+    "q": "Chicago,US",
+    "dt": "2022-11-15",
+    "statusCode": 403,
+    "scenario": "Error code 2007: API key has exceeded calls per month quota.<br />Error code 2008: API key has been disabled.<br />Error code 2009: API key does not have access to the resource. Please check pricing page for what is allowed in your API subscription plan."
+  },
+  {
+    "q": "Delhi,IN",
+    "statusCode": 403,
+    "scenario": "Error code 2007: API key has exceeded calls per month quota.<br />Error code 2008: API key has been disabled.<br />Error code 2009: API key does not have access to the resource. Please check pricing page for what is allowed in your API subscription plan."
+  },
+  {
+    "q": "Seoul,KR",
+    "dt": "2023-03-03",
+    "statusCode": 403,
+    "scenario": "Error code 2007: API key has exceeded calls per month quota.<br />Error code 2008: API key has been disabled.<br />Error code 2009: API key does not have access to the resource. Please check pricing page for what is allowed in your API subscription plan."
+  }
+]
