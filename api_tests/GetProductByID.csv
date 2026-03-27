@@ -1,0 +1,11 @@
+id,username,email,dob,gender,city,state,zipcode
+1,JohnDoe,johndoe@example.com,1980-12-12,Male,Los Angeles,California,90001
+2,JaneDoe,janedoe@example.com,1985-05-15,Female,New York,New York,10001
+3,RobertSmith,robertsmith@example.com,1990-08-30,Male,Chicago,Illinois,60616
+4,EmilyJohnson,emilyjohnson@example.com,1987-07-24,Female,Houston,Texas,77001
+5,MichaelBrown,michaelbrown@example.com,1982-03-14,Male,Philadelphia,Pennsylvania,19106
+6,EmmaJones,emmajones@example.com,1989-11-18,Female,Phoenix,Arizona,85001
+7,BrianMiller,brianmiller@example.com,1991-04-02,Male,San Diego,California,92101
+8,SarahDavis,sarahdavis@example.com,1986-09-09,Female,Dallas,Texas,75201
+9,JamesWilson,jameswilson@example.com,1983-06-19,Male,San Jose,California,95101
+10,ElizabethTaylor,elizabethtaylor@example.com,1988-10-25,Female,Jacksonville,Florida,32201
