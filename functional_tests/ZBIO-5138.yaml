@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: Credit Card Notification System
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+paths:
+  /dueReminder:
+    get:
+      summary: Get credit card due reminder 
+      responses:
+        '200':
+          description: Success, scheduled reminder is returned.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '30/11/2022'
+  /overdueAlert:
+    get:
+      summary: Check for any overdue alert
+      responses: 
+        '200':
+          description: Success, overdue alert is returned.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '02/12/2022'
+  /collectionNotification:
+    get:
+      summary: Get collection notifications
+      responses:
+        '200':
+          description: Success, details of overdue balance and necessary actions are returned
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  overdueBalance: 
+                    type: number
+                  lateFine:
+                    type: number
+                  necessaryActions:
+                    type: string
+  /paymentPlan:
+    post:
+      summary: Send a payment plan proposal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                proposal:
+                  type: string
+      responses:
+        '201':
+          description: Success, payment plan proposal received.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'payment plan proposal'
+  /agencyInvolvement:
+    get:
+      summary: Get status of collection agency involvement
+      responses:
+        '200':
+          description: Success, status of collection agency involvement is returned.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Involve a collection agency'
+  /legalActionInitiation:
+    get:
+      summary: Get status of legal actions
+      responses:
+        '200':
+          description: Success, status of legal actions is returned.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 'Initiate stringent legal actions'
+components:
+  schemas:
+    dueReminder:
+      type: object
+      properties:
+        dueDate:
+          type: string
+          format: date
+    overdueAlert:
+      type: object
+      properties:
+        overdueDate:
+          type: string
+          format: date
+    collectionNotification:
+      type: object
+      properties:
+        overdueBalance:
+          type: integer
+        lateFine:
+          type: integer
+        necessaryActions:
+          type: string
+    paymentPlan:
+      type: object
+      properties:
+        proposal:
+          type: string
+    agencyInvolvement:
+      type: object
+      properties:
+        status:
+          type: string
+    legalActionInitiation:
+      type: object
+      properties:
+        status:
+          type: string  
