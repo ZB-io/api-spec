@@ -1,0 +1,120 @@
+{
+  "summary": "The source defines EvolvePay’s core features: user registration/login, tiered KYC (Tier 1 via email, Tier 2 via government ID + selfie) with status visibility, prepaid card management (virtual/physical), card funding, balances and transaction histories with strict pagination and filters, immediate card block, and international remittance with beneficiary management, pre-confirmation exchange rate/fee disclosure, and paginated histories with statuses. It emphasizes AML/KYC compliance via tier gating (Tier 2 required for physical card and remittance; virtual card allowed for Tier 1 and Tier 2). Numeric and decision rules include transaction history pagination at 25 per page, allowed transaction types, and card details showing daily load limit and remaining allowance. No performance SLAs, retries, or audit log requirements are specified.",
+  "domain": "fintech",
+  "riskLevel": "high",
+  "totalRecommendedTestCount": 73,
+  "workflows": [
+    {
+      "name": "Registration",
+      "description": "Register using email and password to create a Tier 1 account.",
+      "priority": "P0",
+      "testPointCount": 4,
+      "rationale": "Covers happy path account creation to Tier 1 (US-101), required field presence (email, password), basic error handling for missing inputs, and confirmation of Tier 1 state visibility (via US-104)."
+    },
+    {
+      "name": "Login",
+      "description": "Secure login for registered users.",
+      "priority": "P0",
+      "testPointCount": 4,
+      "rationale": "Valid login flow, invalid credentials handling, session initiation, and logout/login re-entry as basic secure access checks as implied by 'log in securely.'"
+    },
+    {
+      "name": "KYC Submission",
+      "description": "Tier 1 users submit ID (passport or driver's license) and selfie to obtain Tier 2.",
+      "priority": "P0",
+      "testPointCount": 6,
+      "rationale": "Positive for passport + selfie and driver’s license + selfie; negatives for unsupported ID type and missing selfie; submission transitions user from Tier 1 to Pending; validates only stated ID types."
+    },
+    {
+      "name": "Verification Status Visibility",
+      "description": "Users can view current verification status values.",
+      "priority": "P0",
+      "testPointCount": 4,
+      "rationale": "Status display for Tier 1 baseline; status shows Pending after KYC submission; status shows Tier 2 after verification; validate only listed statuses (Tier 1, Tier 2, Pending)."
+    },
+    {
+      "name": "Virtual Prepaid Card Application",
+      "description": "Apply for a virtual prepaid card for immediate online purchase use.",
+      "priority": "P0",
+      "testPointCount": 2,
+      "rationale": "Happy path issuance for eligible users (Tier 1 or Tier 2) and confirmation that virtual card is provisioned for immediate use."
+    },
+    {
+      "name": "Physical Prepaid Card Order",
+      "description": "Tier 2 users can order a physical prepaid card; Tier 1 must be blocked.",
+      "priority": "P0",
+      "testPointCount": 2,
+      "rationale": "Positive order flow for Tier 2 including mailing details confirmation; validation that Tier 1 is not allowed per strict gating."
+    },
+    {
+      "name": "Load Funds (Top-Up) from Linked Bank Account",
+      "description": "Users top up the prepaid card from a linked bank account.",
+      "priority": "P0",
+      "testPointCount": 3,
+      "rationale": "Top-up happy path; balance reflects the load; load appears as a transaction for subsequent history/filters."
+    },
+    {
+      "name": "Balance and Recent Transactions",
+      "description": "View current balance and a list of recent transactions.",
+      "priority": "P1",
+      "testPointCount": 3,
+      "rationale": "Display correctness for balance; recent transactions listing presence; refresh correctness after a new top-up or purchase event."
+    },
+    {
+      "name": "Transaction History Pagination and Filters",
+      "description": "Paginated transaction history at 25 per page with date range and type filters (load, purchase, refund).",
+      "priority": "P0",
+      "testPointCount": 12,
+      "rationale": "Numeric rule: exactly 25/page; boundaries: 0, 1–24, exactly 25, 26+, last page <25; filters: date range edges and type filter for allowed values; negative for invalid type outside {load, purchase, refund}; combined filter interactions."
+    },
+    {
+      "name": "Immediate Card Block",
+      "description": "User can immediately block the card from the app if lost/stolen.",
+      "priority": "P0",
+      "testPointCount": 4,
+      "rationale": "Block action availability; immediate state change confirmation; persistence across sessions; visibility of blocked state in relevant card UI."
+    },
+    {
+      "name": "Card Details: Balance, Daily Load Limit, Remaining Allowance",
+      "description": "Card details view shows balance, daily load limit, and remaining allowance.",
+      "priority": "P0",
+      "testPointCount": 4,
+      "rationale": "Presence of all three fields; numeric display formatting per example; update after a load to reflect 'used' vs 'limit'; correctness of remaining allowance visibility."
+    },
+    {
+      "name": "International Remittance - Send Money",
+      "description": "Tier 2 users send money internationally from their account.",
+      "priority": "P0",
+      "testPointCount": 3,
+      "rationale": "Positive send flow for Tier 2; integration with beneficiary selection; ensure transfer initiates and is later reflected in remittance history."
+    },
+    {
+      "name": "Beneficiary Management",
+      "description": "Add, save, and delete beneficiary details (Full Name, Country, Bank Account/Mobile Money).",
+      "priority": "P0",
+      "testPointCount": 6,
+      "rationale": "Add with all required fields; persistence (save) verification; delete workflow; variations for Bank Account vs Mobile Money; negatives for missing required fields."
+    },
+    {
+      "name": "Exchange Rate and Fee Disclosure Pre-Confirmation",
+      "description": "Display clear exchange rate and transaction fees before confirming a transfer.",
+      "priority": "P0",
+      "testPointCount": 3,
+      "rationale": "Presence and clarity of rate and fees on the pre-confirmation step; confirmation occurs only after viewing this information per requirement; display remains consistent during review."
+    },
+    {
+      "name": "Remittance History and Statuses",
+      "description": "Paginated history of past transfers showing statuses (Pending, Completed, Failed).",
+      "priority": "P0",
+      "testPointCount": 5,
+      "rationale": "Pagination presence; visibility for each documented status (Pending, Completed, Failed); navigation across pages; correctness of status mapping post-transfer."
+    },
+    {
+      "name": "Tier-Based Access Control Matrix",
+      "description": "Decision-table coverage across tiers for virtual card (allowed T1/T2), physical card (T2 only), and remittance (T2 only).",
+      "priority": "P0",
+      "testPointCount": 8,
+      "rationale": "Matrix covers allow/deny across three features and two tiers: 2 positive (virtual T1/T2), 2 positive (physical T2, remittance T2), 2 negative (physical T1, remittance T1), plus UI gating and direct action attempts for each disallowed path."
+    }
+  ]
+}

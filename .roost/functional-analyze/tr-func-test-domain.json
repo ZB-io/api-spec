@@ -1,0 +1,2812 @@
+{
+  "triggerId": "9ea8dcb4-8b9f-403e-b20c-12b444911404",
+  "ticketId": "tr-func-test-domain",
+  "mode": "outline-only",
+  "generatedAt": "2026-06-17T12:20:34.554Z",
+  "source": {
+    "type": "user_input",
+    "filePaths": [
+      "/var/tmp/Roost/RoostGPT/tr-func-test-domain/9ea8dcb4-8b9f-403e-b20c-12b444911404/prepaid-card-requirement.docx"
+    ],
+    "hasInlineData": ""
+  },
+  "discovery": {
+    "summary": "The source defines EvolvePay’s core features: user registration/login, tiered KYC (Tier 1 via email, Tier 2 via government ID + selfie) with status visibility, prepaid card management (virtual/physical), card funding, balances and transaction histories with strict pagination and filters, immediate card block, and international remittance with beneficiary management, pre-confirmation exchange rate/fee disclosure, and paginated histories with statuses. It emphasizes AML/KYC compliance via tier gating (Tier 2 required for physical card and remittance; virtual card allowed for Tier 1 and Tier 2). Numeric and decision rules include transaction history pagination at 25 per page, allowed transaction types, and card details showing daily load limit and remaining allowance. No performance SLAs, retries, or audit log requirements are specified.",
+    "domain": "fintech",
+    "riskLevel": "high",
+    "totalRecommendedTestCount": 73,
+    "workflows": [
+      {
+        "name": "Registration",
+        "description": "Register using email and password to create a Tier 1 account.",
+        "priority": "P0",
+        "testPointCount": 4,
+        "rationale": "Covers happy path account creation to Tier 1 (US-101), required field presence (email, password), basic error handling for missing inputs, and confirmation of Tier 1 state visibility (via US-104)."
+      },
+      {
+        "name": "Login",
+        "description": "Secure login for registered users.",
+        "priority": "P0",
+        "testPointCount": 4,
+        "rationale": "Valid login flow, invalid credentials handling, session initiation, and logout/login re-entry as basic secure access checks as implied by 'log in securely.'"
+      },
+      {
+        "name": "KYC Submission",
+        "description": "Tier 1 users submit ID (passport or driver's license) and selfie to obtain Tier 2.",
+        "priority": "P0",
+        "testPointCount": 6,
+        "rationale": "Positive for passport + selfie and driver’s license + selfie; negatives for unsupported ID type and missing selfie; submission transitions user from Tier 1 to Pending; validates only stated ID types."
+      },
+      {
+        "name": "Verification Status Visibility",
+        "description": "Users can view current verification status values.",
+        "priority": "P0",
+        "testPointCount": 4,
+        "rationale": "Status display for Tier 1 baseline; status shows Pending after KYC submission; status shows Tier 2 after verification; validate only listed statuses (Tier 1, Tier 2, Pending)."
+      },
+      {
+        "name": "Virtual Prepaid Card Application",
+        "description": "Apply for a virtual prepaid card for immediate online purchase use.",
+        "priority": "P0",
+        "testPointCount": 2,
+        "rationale": "Happy path issuance for eligible users (Tier 1 or Tier 2) and confirmation that virtual card is provisioned for immediate use."
+      },
+      {
+        "name": "Physical Prepaid Card Order",
+        "description": "Tier 2 users can order a physical prepaid card; Tier 1 must be blocked.",
+        "priority": "P0",
+        "testPointCount": 2,
+        "rationale": "Positive order flow for Tier 2 including mailing details confirmation; validation that Tier 1 is not allowed per strict gating."
+      },
+      {
+        "name": "Load Funds (Top-Up) from Linked Bank Account",
+        "description": "Users top up the prepaid card from a linked bank account.",
+        "priority": "P0",
+        "testPointCount": 3,
+        "rationale": "Top-up happy path; balance reflects the load; load appears as a transaction for subsequent history/filters."
+      },
+      {
+        "name": "Balance and Recent Transactions",
+        "description": "View current balance and a list of recent transactions.",
+        "priority": "P1",
+        "testPointCount": 3,
+        "rationale": "Display correctness for balance; recent transactions listing presence; refresh correctness after a new top-up or purchase event."
+      },
+      {
+        "name": "Transaction History Pagination and Filters",
+        "description": "Paginated transaction history at 25 per page with date range and type filters (load, purchase, refund).",
+        "priority": "P0",
+        "testPointCount": 12,
+        "rationale": "Numeric rule: exactly 25/page; boundaries: 0, 1–24, exactly 25, 26+, last page <25; filters: date range edges and type filter for allowed values; negative for invalid type outside {load, purchase, refund}; combined filter interactions."
+      },
+      {
+        "name": "Immediate Card Block",
+        "description": "User can immediately block the card from the app if lost/stolen.",
+        "priority": "P0",
+        "testPointCount": 4,
+        "rationale": "Block action availability; immediate state change confirmation; persistence across sessions; visibility of blocked state in relevant card UI."
+      },
+      {
+        "name": "Card Details: Balance, Daily Load Limit, Remaining Allowance",
+        "description": "Card details view shows balance, daily load limit, and remaining allowance.",
+        "priority": "P0",
+        "testPointCount": 4,
+        "rationale": "Presence of all three fields; numeric display formatting per example; update after a load to reflect 'used' vs 'limit'; correctness of remaining allowance visibility."
+      },
+      {
+        "name": "International Remittance - Send Money",
+        "description": "Tier 2 users send money internationally from their account.",
+        "priority": "P0",
+        "testPointCount": 3,
+        "rationale": "Positive send flow for Tier 2; integration with beneficiary selection; ensure transfer initiates and is later reflected in remittance history."
+      },
+      {
+        "name": "Beneficiary Management",
+        "description": "Add, save, and delete beneficiary details (Full Name, Country, Bank Account/Mobile Money).",
+        "priority": "P0",
+        "testPointCount": 6,
+        "rationale": "Add with all required fields; persistence (save) verification; delete workflow; variations for Bank Account vs Mobile Money; negatives for missing required fields."
+      },
+      {
+        "name": "Exchange Rate and Fee Disclosure Pre-Confirmation",
+        "description": "Display clear exchange rate and transaction fees before confirming a transfer.",
+        "priority": "P0",
+        "testPointCount": 3,
+        "rationale": "Presence and clarity of rate and fees on the pre-confirmation step; confirmation occurs only after viewing this information per requirement; display remains consistent during review."
+      },
+      {
+        "name": "Remittance History and Statuses",
+        "description": "Paginated history of past transfers showing statuses (Pending, Completed, Failed).",
+        "priority": "P0",
+        "testPointCount": 5,
+        "rationale": "Pagination presence; visibility for each documented status (Pending, Completed, Failed); navigation across pages; correctness of status mapping post-transfer."
+      },
+      {
+        "name": "Tier-Based Access Control Matrix",
+        "description": "Decision-table coverage across tiers for virtual card (allowed T1/T2), physical card (T2 only), and remittance (T2 only).",
+        "priority": "P0",
+        "testPointCount": 8,
+        "rationale": "Matrix covers allow/deny across three features and two tiers: 2 positive (virtual T1/T2), 2 positive (physical T2, remittance T2), 2 negative (physical T1, remittance T1), plus UI gating and direct action attempts for each disallowed path."
+      }
+    ]
+  },
+  "outlines": [
+    {
+      "testId": "TC-REG-01",
+      "title": "Register with email and password creates Tier 1 access",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password so that I can access the service as a Tier 1 user."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REG-02",
+      "title": "Registration requires email input",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REG-03",
+      "title": "Registration requires password input",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REG-04",
+      "title": "Post-registration user can access as Tier 1",
+      "workflow": "User & KYC Management",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "so that I can access the service as a Tier 1 user."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-LOGIN-01",
+      "title": "Successful secure login for registered user",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "log in to my account securely."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-LOGIN-02",
+      "title": "Login requires email field",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-LOGIN-03",
+      "title": "Login requires password field",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-LOGIN-04",
+      "title": "Unregistered user cannot log in",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-01",
+      "title": "Submit passport and selfie for KYC verification",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie to get KYC-verified."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-02",
+      "title": "Submit driver's license and selfie for KYC verification",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie to get KYC-verified."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-03",
+      "title": "Reject unsupported ID types during KYC",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-04",
+      "title": "Reject KYC submission without selfie",
+      "workflow": "User & KYC Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "and a selfie to get KYC-verified."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-05",
+      "title": "Status shows Pending after KYC submission",
+      "workflow": "User & KYC Management",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-06",
+      "title": "Tier upgrade to Tier 2 after KYC verification",
+      "workflow": "User & KYC Management",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 3.0 User Tiers & Compliance",
+        "excerpt": "Tier 2 (Verified): Users who have completed the full KYC... They unlock all platform features."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VSTAT-01",
+      "title": "Profile shows Tier 1 status for new users",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status (Tier 1, Tier 2, or Pending) clearly in my profile."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VSTAT-02",
+      "title": "Profile displays Pending status during review",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VSTAT-03",
+      "title": "Profile displays Tier 2 status after verification",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VSTAT-04",
+      "title": "Verification status is clearly visible on profile page",
+      "workflow": "User & KYC Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status ... clearly in my profile."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VCARD-01",
+      "title": "Tier 1 applies for virtual prepaid card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VCARD-02",
+      "title": "Tier 2 applies for virtual prepaid card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-PCARD-01",
+      "title": "Tier 2 can order physical prepaid card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-PCARD-02",
+      "title": "Tier 1 must be blocked from ordering physical card",
+      "workflow": "Prepaid Card Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TOPUP-01",
+      "title": "Tier 1 loads funds from linked bank account",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "load funds (top-up) onto my prepaid card from my linked bank account."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TOPUP-02",
+      "title": "Tier 2 loads funds from linked bank account",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "load funds (top-up) onto my prepaid card from my linked bank account."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TOPUP-03",
+      "title": "Top-up reflects in card balance after completion",
+      "workflow": "Prepaid Card Management",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203, US-204",
+        "excerpt": "load funds (top-up)... check the current balance"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BALTX-01",
+      "title": "View current balance on card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "check the current balance"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BALTX-02",
+      "title": "View recent transactions list on card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "view a list of recent transactions on my card."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BALTX-03",
+      "title": "Recent transactions include latest top-up entry",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "view a list of recent transactions on my card."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-01",
+      "title": "Transaction history shows exactly 25 per page",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-02",
+      "title": "Transaction history handles zero results gracefully",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-03",
+      "title": "Transaction history single page for 1–24 results",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-04",
+      "title": "Transaction history spans two pages at 26 results",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-05",
+      "title": "Last page contains fewer than 25 transactions",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-06",
+      "title": "Filter transaction history by date range",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-07",
+      "title": "Filter by transaction type: load",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-08",
+      "title": "Filter by transaction type: purchase",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-09",
+      "title": "Filter by transaction type: refund",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-10",
+      "title": "Combine date range and transaction type filters",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range and by transaction type"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-11",
+      "title": "Reject invalid transaction type filter values",
+      "workflow": "Prepaid Card Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "transaction type (load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-12",
+      "title": "Navigate between paginated transaction history pages",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CBLOCK-01",
+      "title": "Tier 1 user blocks card immediately from app",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CBLOCK-02",
+      "title": "Tier 2 user blocks card immediately from app",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CBLOCK-03",
+      "title": "Card state changes to Blocked immediately",
+      "workflow": "Prepaid Card Management",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CBLOCK-04",
+      "title": "Initiate block from app and verify immediate effect",
+      "workflow": "Prepaid Card Management",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CARDDET-01",
+      "title": "Card details show current balance",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "when I view my card details, I need to see my current balance"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CARDDET-02",
+      "title": "Card details show daily load limit",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "see my current balance as well as my daily load limit"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CARDDET-03",
+      "title": "Card details show remaining allowance for the day",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "and the remaining allowance for the day"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CARDDET-04",
+      "title": "Card details display matches example format string",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "(e.g., \"$500.00 / $2000.00 daily limit used\")"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMIT-01",
+      "title": "Tier 2 user sends international remittance",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money from my account to an international recipient"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMIT-02",
+      "title": "Tier 1 user cannot send international remittance",
+      "workflow": "International Remittance",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMIT-03",
+      "title": "Remittance submission appears in history after send",
+      "workflow": "International Remittance",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401, US-404",
+        "excerpt": "send money... see a paginated history of all my past international money transfers"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-01",
+      "title": "Add beneficiary with Full Name, Country, Bank Account",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details (Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-02",
+      "title": "Add beneficiary using Mobile Money instead of bank account",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "Bank Account/Mobile Money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-03",
+      "title": "Save beneficiary to reuse later",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-04",
+      "title": "Delete a saved beneficiary",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-05",
+      "title": "Reject saving beneficiary without Full Name",
+      "workflow": "International Remittance",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-06",
+      "title": "Reject saving beneficiary without Bank Account or Mobile Money",
+      "workflow": "International Remittance",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-RATES-01",
+      "title": "Exchange rate shown before transfer confirmation",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate ... before I confirm the transfer."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-RATES-02",
+      "title": "Transaction fees shown before transfer confirmation",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see ... any transaction fees before I confirm the transfer."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-RATES-03",
+      "title": "Both exchange rate and fees are visible pre-confirmation",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate and any transaction fees before I confirm the transfer."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-01",
+      "title": "View paginated remittance transfer history",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "see a paginated history of all my past international money transfers"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-02",
+      "title": "Remittance status shows Pending",
+      "workflow": "International Remittance",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-03",
+      "title": "Remittance status shows Completed",
+      "workflow": "International Remittance",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-04",
+      "title": "Remittance status shows Failed",
+      "workflow": "International Remittance",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-05",
+      "title": "Navigate across pages of remittance history",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "see a paginated history of all my past international money transfers"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-01",
+      "title": "Tier 1 allowed to apply for virtual card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-02",
+      "title": "Tier 2 allowed to apply for virtual card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-03",
+      "title": "Tier 2 allowed to order physical card",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-04",
+      "title": "Tier 1 disallowed from ordering physical card",
+      "workflow": "Prepaid Card Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-05",
+      "title": "Tier 2 allowed to send international remittance",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-06",
+      "title": "Tier 1 disallowed from sending remittance",
+      "workflow": "International Remittance",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-07",
+      "title": "Remittance access unlocks after KYC Tier 1→Tier 2",
+      "workflow": "International Remittance",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.1 US-103 and 4.3 US-401",
+        "excerpt": "get KYC-verified... As a Tier 2 (Verified) user, I want to send money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-ACCESS-08",
+      "title": "Physical card ordering unlocks after KYC Tier 1→Tier 2",
+      "workflow": "Prepaid Card Management",
+      "type": "e2e",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.1 US-103 and 4.2 US-202",
+        "excerpt": "get KYC-verified... As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-13",
+      "title": "Date range filter with start equals end day",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-14",
+      "title": "Date range filter using earliest available date",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-15",
+      "title": "Date range filter using latest available date",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-KYC-07",
+      "title": "Verify only supported ID types listed: passport, driver's license",
+      "workflow": "User & KYC Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "ID (passport, driver's license)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VSTAT-05",
+      "title": "Only Tier 1, Tier 2, or Pending statuses are shown",
+      "workflow": "User & KYC Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VCARD-03",
+      "title": "Virtual card enables immediate online purchases",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "apply for a new virtual prepaid card so I can start making online purchases immediately."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-PCARD-03",
+      "title": "Physical prepaid card is mailed to user address",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "order a physical prepaid card to be mailed to my address."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-RATES-04",
+      "title": "Clear exchange rate presentation (clarity check)",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-RATES-05",
+      "title": "Fee disclosure visibility (clarity check)",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see ... any transaction fees"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-06",
+      "title": "History shows each transfer with its status",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "history of all my past international money transfers and their statuses"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TOPUP-04",
+      "title": "Top-up action available from linked bank account screen",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "top-up ... from my linked bank account."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-07",
+      "title": "Edit beneficiary details by saving updated values",
+      "workflow": "International Remittance",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-07",
+      "title": "Remittance history initially empty then populated after send",
+      "workflow": "International Remittance",
+      "type": "state-transition",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.3 US-401, US-404",
+        "excerpt": "send money... see a paginated history of all my past international money transfers"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CARDDET-05",
+      "title": "Card details page aggregates balance, limit, allowance together",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "see my current balance as well as my daily load limit and the remaining allowance for the day"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-16",
+      "title": "Filter rejects type values outside load,purchase,refund",
+      "workflow": "Prepaid Card Management",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "(load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMIT-04",
+      "title": "Remittance available only to Verified (Tier 2) users",
+      "workflow": "International Remittance",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 3.0 and 4.3 US-401",
+        "excerpt": "Tier 2 (Verified)... I want to send money"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-VCARD-04",
+      "title": "Virtual card eligibility includes Tier 1 and Tier 2",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "registered user (Tier 1 or Tier 2)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-PCARD-04",
+      "title": "Physical card eligibility restricted to Tier 2 only",
+      "workflow": "Prepaid Card Management",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-17",
+      "title": "Transaction history displays type labels: load,purchase,refund",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "transaction type (load, purchase, refund)"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BALTX-04",
+      "title": "Balance view accessible from card screen",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "check the current balance"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-CBLOCK-05",
+      "title": "Block action entry point exists within app",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "from the app"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-TXHIST-18",
+      "title": "Date range filter excludes out-of-range transactions",
+      "workflow": "Prepaid Card Management",
+      "type": "functional",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-REMHIST-08",
+      "title": "Statuses limited to Pending, Completed, Failed in history",
+      "workflow": "International Remittance",
+      "type": "boundary",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "statuses (e.g., Pending, Completed, Failed)."
+      },
+      "sourceRefs": []
+    },
+    {
+      "testId": "TC-BEN-08",
+      "title": "Country field required for beneficiary",
+      "workflow": "International Remittance",
+      "type": "negative",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "sourceRefs": []
+    }
+  ],
+  "coverageSummary": {
+    "total": 97,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 97,
+    "overallPct": 0
+  },
+  "workflowCoverage": [
+    {
+      "name": "Registration",
+      "planned": 4,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Login",
+      "planned": 4,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "KYC Submission",
+      "planned": 6,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Verification Status Visibility",
+      "planned": 4,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Virtual Prepaid Card Application",
+      "planned": 2,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Physical Prepaid Card Order",
+      "planned": 2,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Load Funds (Top-Up) from Linked Bank Account",
+      "planned": 3,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Balance and Recent Transactions",
+      "planned": 3,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Transaction History Pagination and Filters",
+      "planned": 12,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Immediate Card Block",
+      "planned": 4,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Card Details: Balance, Daily Load Limit, Remaining Allowance",
+      "planned": 4,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "International Remittance - Send Money",
+      "planned": 3,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Beneficiary Management",
+      "planned": 6,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Exchange Rate and Fee Disclosure Pre-Confirmation",
+      "planned": 3,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Remittance History and Statuses",
+      "planned": 5,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    },
+    {
+      "name": "Tier-Based Access Control Matrix",
+      "planned": 8,
+      "covered": 0,
+      "partial": 0,
+      "uncovered": 0,
+      "pct": 0
+    }
+  ],
+  "coveredItems": [],
+  "partialItems": [],
+  "uncoveredItems": [
+    {
+      "id": "TC-REG-01",
+      "testId": "TC-REG-01",
+      "title": "Register with email and password creates Tier 1 access",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password so that I can access the service as a Tier 1 user."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REG-02",
+      "testId": "TC-REG-02",
+      "title": "Registration requires email input",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REG-03",
+      "testId": "TC-REG-03",
+      "title": "Registration requires password input",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "register for an account using my email and password"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REG-04",
+      "testId": "TC-REG-04",
+      "title": "Post-registration user can access as Tier 1",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-101",
+        "excerpt": "so that I can access the service as a Tier 1 user."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-LOGIN-01",
+      "testId": "TC-LOGIN-01",
+      "title": "Successful secure login for registered user",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "log in to my account securely."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-LOGIN-02",
+      "testId": "TC-LOGIN-02",
+      "title": "Login requires email field",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-LOGIN-03",
+      "testId": "TC-LOGIN-03",
+      "title": "Login requires password field",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-LOGIN-04",
+      "testId": "TC-LOGIN-04",
+      "title": "Unregistered user cannot log in",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-102",
+        "excerpt": "As a registered user, I want to log in to my account securely."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-01",
+      "testId": "TC-KYC-01",
+      "title": "Submit passport and selfie for KYC verification",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie to get KYC-verified."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-02",
+      "testId": "TC-KYC-02",
+      "title": "Submit driver's license and selfie for KYC verification",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie to get KYC-verified."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-03",
+      "testId": "TC-KYC-03",
+      "title": "Reject unsupported ID types during KYC",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "submit my ID (passport, driver's license) and a selfie"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-04",
+      "testId": "TC-KYC-04",
+      "title": "Reject KYC submission without selfie",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "and a selfie to get KYC-verified."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-05",
+      "testId": "TC-KYC-05",
+      "title": "Status shows Pending after KYC submission",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-06",
+      "testId": "TC-KYC-06",
+      "title": "Tier upgrade to Tier 2 after KYC verification",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 3.0 User Tiers & Compliance",
+        "excerpt": "Tier 2 (Verified): Users who have completed the full KYC... They unlock all platform features."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VSTAT-01",
+      "testId": "TC-VSTAT-01",
+      "title": "Profile shows Tier 1 status for new users",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status (Tier 1, Tier 2, or Pending) clearly in my profile."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VSTAT-02",
+      "testId": "TC-VSTAT-02",
+      "title": "Profile displays Pending status during review",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VSTAT-03",
+      "testId": "TC-VSTAT-03",
+      "title": "Profile displays Tier 2 status after verification",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VSTAT-04",
+      "testId": "TC-VSTAT-04",
+      "title": "Verification status is clearly visible on profile page",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "see my current verification status ... clearly in my profile."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VCARD-01",
+      "testId": "TC-VCARD-01",
+      "title": "Tier 1 applies for virtual prepaid card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VCARD-02",
+      "testId": "TC-VCARD-02",
+      "title": "Tier 2 applies for virtual prepaid card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-PCARD-01",
+      "testId": "TC-PCARD-01",
+      "title": "Tier 2 can order physical prepaid card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-PCARD-02",
+      "testId": "TC-PCARD-02",
+      "title": "Tier 1 must be blocked from ordering physical card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TOPUP-01",
+      "testId": "TC-TOPUP-01",
+      "title": "Tier 1 loads funds from linked bank account",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "load funds (top-up) onto my prepaid card from my linked bank account."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TOPUP-02",
+      "testId": "TC-TOPUP-02",
+      "title": "Tier 2 loads funds from linked bank account",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "load funds (top-up) onto my prepaid card from my linked bank account."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TOPUP-03",
+      "testId": "TC-TOPUP-03",
+      "title": "Top-up reflects in card balance after completion",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203, US-204",
+        "excerpt": "load funds (top-up)... check the current balance"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BALTX-01",
+      "testId": "TC-BALTX-01",
+      "title": "View current balance on card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "check the current balance"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BALTX-02",
+      "testId": "TC-BALTX-02",
+      "title": "View recent transactions list on card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "view a list of recent transactions on my card."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BALTX-03",
+      "testId": "TC-BALTX-03",
+      "title": "Recent transactions include latest top-up entry",
+      "workflow": "Prepaid Card Management",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "view a list of recent transactions on my card."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-01",
+      "testId": "TC-TXHIST-01",
+      "title": "Transaction history shows exactly 25 per page",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-02",
+      "testId": "TC-TXHIST-02",
+      "title": "Transaction history handles zero results gracefully",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-03",
+      "testId": "TC-TXHIST-03",
+      "title": "Transaction history single page for 1–24 results",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-04",
+      "testId": "TC-TXHIST-04",
+      "title": "Transaction history spans two pages at 26 results",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-05",
+      "testId": "TC-TXHIST-05",
+      "title": "Last page contains fewer than 25 transactions",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-06",
+      "testId": "TC-TXHIST-06",
+      "title": "Filter transaction history by date range",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-07",
+      "testId": "TC-TXHIST-07",
+      "title": "Filter by transaction type: load",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-08",
+      "testId": "TC-TXHIST-08",
+      "title": "Filter by transaction type: purchase",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-09",
+      "testId": "TC-TXHIST-09",
+      "title": "Filter by transaction type: refund",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "by transaction type (load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-10",
+      "testId": "TC-TXHIST-10",
+      "title": "Combine date range and transaction type filters",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range and by transaction type"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-11",
+      "testId": "TC-TXHIST-11",
+      "title": "Reject invalid transaction type filter values",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "transaction type (load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-12",
+      "testId": "TC-TXHIST-12",
+      "title": "Navigate between paginated transaction history pages",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "the list must be paginated (showing 25 per page)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CBLOCK-01",
+      "testId": "TC-CBLOCK-01",
+      "title": "Tier 1 user blocks card immediately from app",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CBLOCK-02",
+      "testId": "TC-CBLOCK-02",
+      "title": "Tier 2 user blocks card immediately from app",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CBLOCK-03",
+      "testId": "TC-CBLOCK-03",
+      "title": "Card state changes to Blocked immediately",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CBLOCK-04",
+      "testId": "TC-CBLOCK-04",
+      "title": "Initiate block from app and verify immediate effect",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "block my card immediately from the app"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CARDDET-01",
+      "testId": "TC-CARDDET-01",
+      "title": "Card details show current balance",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "when I view my card details, I need to see my current balance"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CARDDET-02",
+      "testId": "TC-CARDDET-02",
+      "title": "Card details show daily load limit",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "see my current balance as well as my daily load limit"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CARDDET-03",
+      "testId": "TC-CARDDET-03",
+      "title": "Card details show remaining allowance for the day",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "and the remaining allowance for the day"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CARDDET-04",
+      "testId": "TC-CARDDET-04",
+      "title": "Card details display matches example format string",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "(e.g., \"$500.00 / $2000.00 daily limit used\")"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMIT-01",
+      "testId": "TC-REMIT-01",
+      "title": "Tier 2 user sends international remittance",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money from my account to an international recipient"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMIT-02",
+      "testId": "TC-REMIT-02",
+      "title": "Tier 1 user cannot send international remittance",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMIT-03",
+      "testId": "TC-REMIT-03",
+      "title": "Remittance submission appears in history after send",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401, US-404",
+        "excerpt": "send money... see a paginated history of all my past international money transfers"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-01",
+      "testId": "TC-BEN-01",
+      "title": "Add beneficiary with Full Name, Country, Bank Account",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details (Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-02",
+      "testId": "TC-BEN-02",
+      "title": "Add beneficiary using Mobile Money instead of bank account",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "Bank Account/Mobile Money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-03",
+      "testId": "TC-BEN-03",
+      "title": "Save beneficiary to reuse later",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-04",
+      "testId": "TC-BEN-04",
+      "title": "Delete a saved beneficiary",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-05",
+      "testId": "TC-BEN-05",
+      "title": "Reject saving beneficiary without Full Name",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-06",
+      "testId": "TC-BEN-06",
+      "title": "Reject saving beneficiary without Bank Account or Mobile Money",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-RATES-01",
+      "testId": "TC-RATES-01",
+      "title": "Exchange rate shown before transfer confirmation",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate ... before I confirm the transfer."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-RATES-02",
+      "testId": "TC-RATES-02",
+      "title": "Transaction fees shown before transfer confirmation",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see ... any transaction fees before I confirm the transfer."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-RATES-03",
+      "testId": "TC-RATES-03",
+      "title": "Both exchange rate and fees are visible pre-confirmation",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate and any transaction fees before I confirm the transfer."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-01",
+      "testId": "TC-REMHIST-01",
+      "title": "View paginated remittance transfer history",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "see a paginated history of all my past international money transfers"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-02",
+      "testId": "TC-REMHIST-02",
+      "title": "Remittance status shows Pending",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-03",
+      "testId": "TC-REMHIST-03",
+      "title": "Remittance status shows Completed",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-04",
+      "testId": "TC-REMHIST-04",
+      "title": "Remittance status shows Failed",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "their statuses (e.g., Pending, Completed, Failed)."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-05",
+      "testId": "TC-REMHIST-05",
+      "title": "Navigate across pages of remittance history",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "see a paginated history of all my past international money transfers"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-01",
+      "testId": "TC-ACCESS-01",
+      "title": "Tier 1 allowed to apply for virtual card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-02",
+      "testId": "TC-ACCESS-02",
+      "title": "Tier 2 allowed to apply for virtual card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-03",
+      "testId": "TC-ACCESS-03",
+      "title": "Tier 2 allowed to order physical card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-04",
+      "testId": "TC-ACCESS-04",
+      "title": "Tier 1 disallowed from ordering physical card",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-05",
+      "testId": "TC-ACCESS-05",
+      "title": "Tier 2 allowed to send international remittance",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-06",
+      "testId": "TC-ACCESS-06",
+      "title": "Tier 1 disallowed from sending remittance",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-401",
+        "excerpt": "As a Tier 2 (Verified) user, I want to send money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-07",
+      "testId": "TC-ACCESS-07",
+      "title": "Remittance access unlocks after KYC Tier 1→Tier 2",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.1 US-103 and 4.3 US-401",
+        "excerpt": "get KYC-verified... As a Tier 2 (Verified) user, I want to send money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-ACCESS-08",
+      "testId": "TC-ACCESS-08",
+      "title": "Physical card ordering unlocks after KYC Tier 1→Tier 2",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.1 US-103 and 4.2 US-202",
+        "excerpt": "get KYC-verified... As a Tier 2 (Verified) user, I want to be able to order a physical prepaid card"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-13",
+      "testId": "TC-TXHIST-13",
+      "title": "Date range filter with start equals end day",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-14",
+      "testId": "TC-TXHIST-14",
+      "title": "Date range filter using earliest available date",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-15",
+      "testId": "TC-TXHIST-15",
+      "title": "Date range filter using latest available date",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-KYC-07",
+      "testId": "TC-KYC-07",
+      "title": "Verify only supported ID types listed: passport, driver's license",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-103",
+        "excerpt": "ID (passport, driver's license)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VSTAT-05",
+      "testId": "TC-VSTAT-05",
+      "title": "Only Tier 1, Tier 2, or Pending statuses are shown",
+      "workflow": "User & KYC Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.1 US-104",
+        "excerpt": "verification status (Tier 1, Tier 2, or Pending)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VCARD-03",
+      "testId": "TC-VCARD-03",
+      "title": "Virtual card enables immediate online purchases",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "apply for a new virtual prepaid card so I can start making online purchases immediately."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-PCARD-03",
+      "testId": "TC-PCARD-03",
+      "title": "Physical prepaid card is mailed to user address",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "order a physical prepaid card to be mailed to my address."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-RATES-04",
+      "testId": "TC-RATES-04",
+      "title": "Clear exchange rate presentation (clarity check)",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see the clear exchange rate"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-RATES-05",
+      "testId": "TC-RATES-05",
+      "title": "Fee disclosure visibility (clarity check)",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-403",
+        "excerpt": "see ... any transaction fees"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-06",
+      "testId": "TC-REMHIST-06",
+      "title": "History shows each transfer with its status",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "history of all my past international money transfers and their statuses"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TOPUP-04",
+      "testId": "TC-TOPUP-04",
+      "title": "Top-up action available from linked bank account screen",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-203",
+        "excerpt": "top-up ... from my linked bank account."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-07",
+      "testId": "TC-BEN-07",
+      "title": "Edit beneficiary details by saving updated values",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "add, save, and delete beneficiary details"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-07",
+      "testId": "TC-REMHIST-07",
+      "title": "Remittance history initially empty then populated after send",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 4.3 US-401, US-404",
+        "excerpt": "send money... see a paginated history of all my past international money transfers"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CARDDET-05",
+      "testId": "TC-CARDDET-05",
+      "title": "Card details page aggregates balance, limit, allowance together",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-207",
+        "excerpt": "see my current balance as well as my daily load limit and the remaining allowance for the day"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-16",
+      "testId": "TC-TXHIST-16",
+      "title": "Filter rejects type values outside load,purchase,refund",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "(load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMIT-04",
+      "testId": "TC-REMIT-04",
+      "title": "Remittance available only to Verified (Tier 2) users",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Sections 3.0 and 4.3 US-401",
+        "excerpt": "Tier 2 (Verified)... I want to send money"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-VCARD-04",
+      "testId": "TC-VCARD-04",
+      "title": "Virtual card eligibility includes Tier 1 and Tier 2",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-201",
+        "excerpt": "registered user (Tier 1 or Tier 2)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-PCARD-04",
+      "testId": "TC-PCARD-04",
+      "title": "Physical card eligibility restricted to Tier 2 only",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-202",
+        "excerpt": "Tier 1 users must not be allowed to order physical cards."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-17",
+      "testId": "TC-TXHIST-17",
+      "title": "Transaction history displays type labels: load,purchase,refund",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "transaction type (load, purchase, refund)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BALTX-04",
+      "testId": "TC-BALTX-04",
+      "title": "Balance view accessible from card screen",
+      "workflow": "Prepaid Card Management",
+      "priority": "P1",
+      "sourceCitation": {
+        "location": "Section 4.2 US-204",
+        "excerpt": "check the current balance"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-CBLOCK-05",
+      "testId": "TC-CBLOCK-05",
+      "title": "Block action entry point exists within app",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-206",
+        "excerpt": "from the app"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-TXHIST-18",
+      "testId": "TC-TXHIST-18",
+      "title": "Date range filter excludes out-of-range transactions",
+      "workflow": "Prepaid Card Management",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.2 US-205",
+        "excerpt": "filter this list by a date range"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-REMHIST-08",
+      "testId": "TC-REMHIST-08",
+      "title": "Statuses limited to Pending, Completed, Failed in history",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-404",
+        "excerpt": "statuses (e.g., Pending, Completed, Failed)."
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    },
+    {
+      "id": "TC-BEN-08",
+      "testId": "TC-BEN-08",
+      "title": "Country field required for beneficiary",
+      "workflow": "International Remittance",
+      "priority": "P0",
+      "sourceCitation": {
+        "location": "Section 4.3 US-402",
+        "excerpt": "(Full Name, Country, Bank Account/Mobile Money)"
+      },
+      "status": "uncovered",
+      "coveredBy": [],
+      "gap": ""
+    }
+  ],
+  "orphans": [],
+  "existingItemsSource": null,
+  "analyzeBranch": "roost-9ea8dcb4-8b9f-403e-b20c-12b444911404",
+  "handoffPath": ".roost/functional-analyze/tr-func-test-domain.json",
+  "generationContext": {
+    "sourceInputType": "user_input",
+    "sourceFiles": [
+      "/var/tmp/Roost/RoostGPT/tr-func-test-domain/9ea8dcb4-8b9f-403e-b20c-12b444911404/prepaid-card-requirement.docx"
+    ],
+    "selectedIdsField": "ROOST_FUNCTIONAL_TEST_IDS_TO_GENERATE",
+    "analyzeBranchField": "ROOST_ANALYZE_BRANCH",
+    "handoffPathField": "ROOST_FUNCTIONAL_ANALYZE_REPORT_PATH",
+    "analyzeArtifactPath": ".roost/functional-analyze/tr-func-test-domain.json"
+  }
+}
