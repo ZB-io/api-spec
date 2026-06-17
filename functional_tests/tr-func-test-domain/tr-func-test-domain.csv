@@ -1,0 +1,41 @@
+Registration form validation and Tier 1 onboarding
+Post-registration profile shows Tier 1 and persists across refresh and re-login
+Secure login for registered user and rejection for unregistered user
+KYC submission accepts allowed ID types with selfie
+KYC requires selfie with ID (blocked until selfie is added)
+Only Passport and Driver's license appear as KYC ID types
+Status shows Pending immediately after KYC submission and persists across re-login
+Verification status progression Tier 1 -> Pending -> Tier 2 is visible in Profile
+Profile shows only enumerated statuses and is clearly visible
+Tier 1 user applies for a virtual prepaid card and it is available immediately
+Physical card order visibility and ordering behavior by user tier
+Physical card order becomes available after Tier 2 verification
+Tier 2 can order a physical card when a virtual card already exists
+Top-up from linked bank account updates balance and appears in recent transactions and filtered history
+Top-up requires a linked bank account
+Post top-up, Card Details shows updated balance and the daily limit/allowance display format
+View current card balance equals seeded value
+Recent transactions list visibility and empty state handling
+Transaction history pagination boundaries and navigation to last page
+Transaction history pagination control navigation
+Date range filter narrows transaction history
+Transaction type filter supports load, purchase, refund
+Combined date range and type filters narrow results conjunctively
+Block card action is immediate and tier-agnostic
+Card details displays daily load limit and remaining allowance including example format
+Balance displayed on Card Details matches balance on balance/transactions view
+Send Money entry point is accessible only to Tier 2
+Tier 2 user can send money with rate and fees disclosed; transfer appears in history with a status
+Add beneficiary with required fields and reuse in send flow
+Delete beneficiary removes it from selection
+Cannot save beneficiary when a required field is missing
+Remittance history pagination and status visibility
+API registration and login establish Tier 1 session or reject unknown user
+API profile returns allowed verification statuses only
+API KYC allowed ID types and submission transitions to Pending
+API physical card order is allowed for Tier 2 and forbidden for Tier 1
+API virtual card creation returns 201 with cardId
+API top-up requires a linked bank account and creates a transaction when valid
+API transactions list supports 25-per-page pagination and filters
+API block card sets status to blocked immediately
+API remittance create authorization and history pagination with statuses
