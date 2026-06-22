@@ -1,0 +1,33 @@
+Registration creates account and defaults to Tier 1
+Secure login displays correct verification status by tier
+KYC submission with supported ID and selfie sets status to Pending
+Only supported ID types are accepted (passport, driver's license)
+Selfie is mandatory for KYC submission
+KYC lifecycle transitions Tier 1 -> Pending -> Tier 2
+Apply for a virtual prepaid card by tier
+Physical card ordering authorization by tier
+User top-up from linked bank account updates balance and recent transactions
+Transaction history shows fixed page size with boundary totals
+Filter transaction history by type
+Filter transaction history by a date range
+Combine date range and type filters with fixed pagination size
+Card state changes to blocked immediately after block action
+Daily load limit used/remaining display across boundaries and cumulative updates
+Tier 2 user can send remittance with pre-confirmation rate and fees visible
+Tier 1 user cannot initiate international remittance
+Add beneficiary for Bank Account or Mobile Money and verify persistence
+Delete beneficiary and verify removal and unavailability for send
+Register -> Login -> KYC -> Tier 2 -> Order physical card
+Apply virtual card -> Top-up -> Validate limit -> History -> Block card
+Add beneficiary -> Send remittance -> View rate/fees -> Confirm -> History status
+API - Register and login yields Tier 1 profile
+API - KYC submission sets status to Pending for supported ID types
+API - KYC validation errors for missing selfie or unsupported idType
+API - Card creation/ordering authorization by tier
+API - Top-up succeeds and transaction recorded
+API - Transaction history pagination and type filtering returns <= 25 per page
+API - Date range filter returns only in-range transactions
+API - Block card updates status immediately
+API - Remittance quote shows exchange rate and fee before sending
+API - Remittance initiation allowed only for Tier 2
+API - Add, list, and delete beneficiary
