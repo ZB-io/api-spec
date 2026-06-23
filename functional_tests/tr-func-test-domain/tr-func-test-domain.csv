@@ -1,0 +1,36 @@
+Register new user attains Tier 1 and can view it in Profile
+Register, then log out and log back in securely
+Invalid credentials are rejected during secure login
+Successful secure login for an already registered user
+Profile clearly shows the user’s verification status
+Submit KYC with ID and selfie (supported ID types)
+KYC submission requires both ID and selfie
+KYC drives transition from Tier 1 to Tier 2 after completion
+Apply for a virtual prepaid card (Tier 1 and Tier 2) and see immediate availability
+Unauthenticated users cannot apply for virtual card
+Physical card ordering is restricted to Tier 2
+Physical card order indicates delivery to the user’s address
+Top-up funds from linked bank account updates balance and records a 'load'
+Top-up requires an authenticated user session
+Transaction history pagination shows 25 items per page
+Date range filter returns matching transactions only
+Filter by transaction type shows only the selected type
+Block card immediately from the app and see persistent blocked status
+Only authenticated users can access the block action
+Card details show balance and daily limit string with correct formatting
+Remittance send flow is gated to Tier 2 (review shows rate and fees)
+Add and save a beneficiary with required fields
+Delete a beneficiary removes it from the saved list and from send flow
+Saved beneficiary is selectable and auto-populates the send flow
+Tier 2 user can send money internationally and see it in remittance history
+Remittance history is paginated and shows statuses
+E2E - Register → KYC → Virtual card → Order physical → Verify daily limit string
+API - Register new user and verify Tier 1 in profile
+API - Login valid and invalid attempts
+API - Submit KYC and verify Pending status
+API - Apply for virtual card and verify presence in list
+API - Physical card ordering requires Tier 2
+API - Top-up increases balance and creates 'load' transaction
+API - Transaction history paginated at 25 per page
+API - Block card and verify status immediately
+API - Remittance send flow gated to Tier 2
