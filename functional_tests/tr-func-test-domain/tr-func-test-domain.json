@@ -1,0 +1,26 @@
+[
+  {
+    "type": "functional",
+    "title": "Tier 1 allowed to apply for virtual card",
+    "description": "Verifies that a Tier 1 (email-verified) user can access and submit the virtual prepaid card application without being blocked by tier restrictions, ensuring correct role-based access for virtual card issuance. Automation: HIGH — UI/API happy path.",
+    "testId": "TC-ACCESS-01",
+    "testDescription": "A registered Tier 1 user signs in, navigates to the Virtual Card Application screen, and submits an application for a new virtual prepaid card. The system accepts the application and displays a confirmation, demonstrating that Tier 1 users are allowed to apply per requirements.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "EvolvePay v1.5 test environment is available and healthy\nA Tier 1 user account exists (email-verified, not KYC-verified), credentials provisioned\nNo active user session prior to test start\nASSUMPTION: Test account does not already have a virtual card; environment permits issuance on demand",
+    "stepsToPerform": "1) Open the EvolvePay app/web and navigate to the Login screen; observe the login form is displayed.\n2) Enter Tier 1 credentials (email: test+t1@example.com, password: ********) and submit; verify successful login to the home/dashboard.\n3) Navigate to Profile; verify verification status explicitly shows \"Tier 1\" to confirm the user's tier.\n4) From the main menu, open Prepaid Card Management and select \"Apply for a new virtual prepaid card\"; verify the Virtual Card Application screen is displayed.\n5) Verify the \"Apply\"/\"Submit\" action for a virtual prepaid card is visible and enabled for this Tier 1 user.\n6) Click the \"Apply\"/\"Submit\" action; verify the app sends the request and shows in-progress feedback (e.g., spinner/progress) until completion.\n7) Observe a confirmation on completion indicating the virtual card application was accepted (e.g., confirmation screen/banner visible).\n8) Navigate to the Card Details area from the app menu and open the newly created virtual card; verify the Card Details screen loads for the virtual card.\n9) On the Card Details screen, verify the presence of a \"current balance\" field label to confirm the card object is accessible (no need to assert specific values).\n10) Log out; verify the session ends and the login screen is shown.",
+    "expectedResult": "- The Virtual Card Application action is accessible and enabled for a Tier 1 user; no tier-based block is shown.\n- Submission completes and a confirmation is displayed indicating the application was accepted.\n- A virtual card is accessible to the user, evidenced by successful navigation to its Card Details screen (with a current balance label visible).",
+    "sourceCitation": {
+      "location": "Section 4.2, US-201 (Lines L46-L50)",
+      "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card so I can start making online purchases immediately."
+    },
+    "module": "Prepaid Card Management",
+    "userTier": "Tier 1",
+    "uiScreen": "Virtual Card Application, Profile, Card Details",
+    "dataSensitivity": "PII, financial",
+    "testData": "Tier 1 user: test+t1@example.com / ********",
+    "assumptions": "ASSUMPTION: UI control labels may vary slightly (e.g., Apply/Submit); confirmation has generic success indicator without a mandated message text.",
+    "riskNotes": "Validates role/tier-based access in a financial context; incorrect gating could violate business rules and user entitlements.",
+    "regulatoryNotes": "Tiering derives from AML/KYC model; this test ensures permitted access for Tier 1 is not improperly restricted."
+  }
+]
