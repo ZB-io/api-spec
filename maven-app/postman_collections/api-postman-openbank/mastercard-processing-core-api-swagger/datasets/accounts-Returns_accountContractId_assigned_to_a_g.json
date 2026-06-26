@@ -1,0 +1,220 @@
+[
+  {
+    "accountContractIdentifier": "CBS83863371812033",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "2b0a5a16-8f55-4b6b-8b62-ae5f4d8b40a1",
+    "accountContractIdentifier": "CBS90384756123456",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifier": "ACN1029384756",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "accountContractIdentifier": "CBS11223344556677",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifier": "ACCOUNT-000012345678",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "38b0c9cf-2c0a-4b00-9a5d-4f9d1f22e1a3",
+    "accountContractIdentifier": "CBS56009876543210",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifier": "ACN556677889900",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "4f9c32b0-1a2b-4c3d-8e9f-1234567890ab",
+    "accountContractIdentifier": "CBS77112233445566",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifier": "ACN-20240615001",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "a7b8c9d0-e1f2-4a3b-9c8d-7e6f5a4b3c2d",
+    "accountContractIdentifier": "CBS65432109876543",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifier": "ACN44556677889900",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "Idempotency-Key": "c1d2e3f4-5678-49ab-9cde-0123456789ab",
+    "accountContractIdentifier": "CBS33002200119988",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 200,
+    "scenario": "The account contract identifier has been fetched successfully."
+  },
+  {
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "accountContractIdentifier": "CBS22334455667788",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "accountContractIdentifier": "CBS99887766554433",
+    "accountContractIdentifierType": "CBS_NUM",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "not-a-valid-uuid-12345",
+    "accountContractIdentifier": "ACN778899001122",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "accountContractIdentifier": "CBS1234567890123456789012345678901234567890123456789012345678901234567",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "accountContractIdentifier": "CBS10101010101010",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBERX",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "d5e1c9a2-0b4f-4f6f-a2a2-99d7c5e6b1c0",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "f2a1c3d4-b5e6-4789-9abc-0def12345678",
+    "accountContractIdentifier": "CBS!@#$%^&*()",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 400,
+    "scenario": "The server cannot process the request due to bad request."
+  },
+  {
+    "Idempotency-Key": "0a1b2c3d-4e5f-6789-abcd-ef0123456789",
+    "accountContractIdentifier": "CBS76543210000001",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "accountContractIdentifier": "ACN900100200300",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "accountContractIdentifier": "CBS44556677889900",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "Idempotency-Key": "1f2e3d4c-5b6a-4789-8c7d-6e5f4a3b2c1d",
+    "accountContractIdentifier": "ACN554433221199",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 403,
+    "scenario": "You do not have the permission to do this operation."
+  },
+  {
+    "accountContractIdentifier": "CBS00000000000001",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "accountContractIdentifier": "ACN000000000000",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "3b2c1d0e-9f8a-4b7c-8d6e-5f4a3b2c1d0e",
+    "accountContractIdentifier": "CBS99999999999998",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "accountContractIdentifier": "ACN-NOTFOUND-202406",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 404,
+    "scenario": "The URI did not match an existing resource."
+  },
+  {
+    "Idempotency-Key": "9e1d2c3b-4a5f-6789-8b7a-6c5d4e3f2a1b",
+    "accountContractIdentifier": "CBS22001100998877",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "9e1d2c3b-4a5f-6789-8b7a-6c5d4e3f2a1b",
+    "accountContractIdentifier": "ACN667788990011",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "5a4b3c2d-1e0f-4a6b-9c8d-7e6f5a4b3c2d",
+    "accountContractIdentifier": "CBS88007700665544",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 409,
+    "scenario": "Original request with the same Idempotency key has not been processed yet."
+  },
+  {
+    "Idempotency-Key": "7da7a728-f910-11e6-942a-68f728c1ba70",
+    "accountContractIdentifier": "CBS11223344556677",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "2b0a5a16-8f55-4b6b-8b62-ae5f4d8b40a1",
+    "accountContractIdentifier": "ACN1029384756",
+    "accountContractIdentifierType": "ACCOUNT_CONTRACT_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  },
+  {
+    "Idempotency-Key": "2b0a5a16-8f55-4b6b-8b62-ae5f4d8b40a1",
+    "accountContractIdentifier": "CBS56009876543210",
+    "accountContractIdentifierType": "CBS_NUMBER",
+    "statusCode": 422,
+    "scenario": "Idempotency key has been used in the last 24 hours."
+  }
+]
