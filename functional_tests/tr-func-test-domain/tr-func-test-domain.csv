@@ -1,0 +1,52 @@
+Register via UI and verify Tier 1 baseline access
+Registration blocked without password
+Registered user can log in
+Unregistered user cannot log in
+Submit KYC with allowed document types results in Pending
+KYC submission blocked without selfie
+KYC document types limited to passport or driver's license
+Status displays Tier 2 after verification
+Only Tier 1, Pending, or Tier 2 statuses appear across users
+Virtual card available immediately for online purchases (Tier 1 and Tier 2)
+Tier 2 can order physical prepaid card
+Tier 1 blocked from ordering physical card
+Physical card order indicates mailed to my address
+Order Physical Card option appears after verification (Tier 2)
+Top-up is available and creates a 'load' transaction entry
+Top-up reduces remaining daily load allowance display
+View current card balance
+View recent transactions list
+Balance reflects top-up
+Transactions pagination at 25-per-page boundary cases
+Filter transactions by date range
+Filter transactions by single type
+Apply date range and type filter together
+Pagination remains 25 per page when filtered
+Block card immediately from the app
+'Block card' action visible to Tier 1 and Tier 2
+Card details show balance, daily load limit, and remaining allowance
+Display includes exact example string format
+After one top-up, used vs limit display updates
+Just-below-limit usage shows remaining allowance
+At-limit usage shows used equals daily limit
+Card details include current balance field with expected value
+Tier 2 user can send money internationally
+Tier 1 cannot initiate international remittance
+Send money using a newly added beneficiary
+After send, transfer appears with Pending status
+Remittance option enabled when user becomes Tier 2
+Add beneficiary with required fields
+Save beneficiary appears for reuse in send flow
+Delete saved beneficiary
+Beneficiary validation errors
+Remittance history is paginated
+Remittance history shows status values
+Navigate across multiple pages of remittance history
+New transfer appears in history with a status
+Auth register/login and validation
+KYC submissions API and document-type enumeration
+Card issuance and ordering via API with tier gating
+Top-up API creates 'load' transaction and transactions list supports pagination and filtering
+Block card via API sets blocked status immediately
+Remittance create and history pagination via API
+Beneficiaries CRUD and validation via API

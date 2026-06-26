@@ -1,0 +1,24 @@
+{
+  "project": {
+    "name": "tr-func-test-domain",
+    "created_at": "2026-06-26T08:12:05.494Z",
+    "updated_at": "2026-06-26T08:12:05.494Z"
+  },
+  "files": {
+    "input_files": [
+      {
+        "fileName": "tr-func-test-domain.txt",
+        "fileURI": "/var/tmp/Roost/RoostGPT/tr-func-test-domain/813c1070-559c-4a66-9e94-ed3e143fa749/functional_tests/tr-func-test-domain/tr-func-test-domain.txt",
+        "fileSha": "cf83e1357e"
+      },
+      {
+        "fileName": "prepaid-card-requirement.docx",
+        "fileURI": "/var/tmp/Roost/RoostGPT/tr-func-test-domain/813c1070-559c-4a66-9e94-ed3e143fa749/functional_tests/tr-func-test-domain/prepaid-card-requirement.docx",
+        "fileSha": "6d41ed379a"
+      }
+    ]
+  },
+  "api_files": {
+    "input_files": []
+  }
+}
