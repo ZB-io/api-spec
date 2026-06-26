@@ -2708,5 +2708,77 @@
     "orderStateTransitions": "",
     "reconStatus": "",
     "maskingNotes": ""
+  },
+  {
+    "type": "functional",
+    "title": "Tier 1 allowed to apply for virtual card",
+    "description": "Verifies Tier 1 users are permitted to apply for a new virtual prepaid card per access gating. Confirms successful creation is visible to the user. Automation: HIGH (UI/API).",
+    "testId": "TC-ACCESS-01",
+    "testDescription": "A Tier 1 (Unverified) registered user signs in and applies for a new virtual prepaid card through Prepaid Card Management. The system should allow the application and display the newly created virtual card to the user.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1) Tier 1 user account exists with verified email and no KYC (Tier 1 status). 2) No existing virtual prepaid card on this account. 3) Prepaid Card Management feature is enabled and reachable in test environment. 4) Authentication service is operational.",
+    "stepsToPerform": "1) Launch the app and navigate to the Login screen; enter tier1.tester+01@example.com and the test password; submit login and verify successful authentication (user lands on home/dashboard). 2) Open Profile and verify the displayed verification status is 'Tier 1' to confirm correct gating context. 3) Navigate to Prepaid Card Management from the main menu and wait for the cards list to load; observe there are currently 0 virtual prepaid cards (per prerequisite). 4) On Prepaid Card Management, select the option to 'Apply for virtual prepaid card'; verify an application flow/screen opens. 5) Proceed through the application by confirming the request (no additional data required by the source); verify the system accepts the submission (no authorization or access error is shown). 6) After submission completes, return to the Prepaid Card Management list; verify a new entry for a virtual prepaid card is now present (card count increased by 1). 7) Select the newly created virtual card to open its details; verify a card details view is displayed (card is accessible to the user). 8) Refresh or re-open the Prepaid Card Management page; verify the virtual card entry persists for this user session. 9) Log out from the account and confirm you are returned to an unauthenticated state.",
+    "expectedResult": "1) Tier 1 user is permitted to initiate and complete the virtual prepaid card application flow. 2) A new virtual prepaid card associated with the user is visible in Prepaid Card Management immediately after submission. 3) No access or authorization error blocks the Tier 1 user from applying for a virtual card.",
+    "sourceCitation": {
+      "location": "Section 4.2, US-201 (Lines L46-L50)",
+      "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card so I can start making online purchases immediately."
+    },
+    "relatedUserStory": "US-201",
+    "userTier": "Tier 1",
+    "uiScreen": "Prepaid Card Management, Virtual Card Application",
+    "testData": "Login: tier1.tester+01@example.com / ****TestPwd01; Device: web or mobile test env; Note: No PII beyond masked email used.",
+    "tags": "access,authorization,prepaid,virtual-card,kyc-gating,ui",
+    "complianceNote": "Tier-based access: Virtual card permitted for Tier 1 per US-201",
+    "dataSetup": "Ensure test Tier 1 account is created with email-verified status and zero existing virtual cards.",
+    "dataCleanup": "Remove the test virtual card from the account in test environment after verification (environment-maintainer step)."
+  },
+  {
+    "type": "functional",
+    "title": "Tier 2 allowed to apply for virtual card",
+    "description": "Verifies Tier 2 users are allowed to apply for a new virtual prepaid card and see it after creation. Automation: HIGH (UI/API).",
+    "testId": "TC-ACCESS-02",
+    "testDescription": "A Tier 2 (Verified) user signs in and applies for a virtual prepaid card. The platform should allow the application for Tier 2 and display the new virtual card in the user's card list.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1) Tier 2 user account exists (verified via completed KYC). 2) No existing virtual prepaid card on this account. 3) Prepaid Card Management service is available. 4) Authentication service is operational.",
+    "stepsToPerform": "1) Launch the app and navigate to Login; enter tier2.tester+02@example.com and the test password; submit and verify successful login to the dashboard. 2) Open Profile and verify verification status shows 'Tier 2' to confirm role. 3) Navigate to Prepaid Card Management; verify there are 0 virtual prepaid cards listed (per prerequisite). 4) Click/tap the 'Apply for virtual prepaid card' option; verify the application flow loads. 5) Confirm/submit the application request; verify the platform accepts the submission (no access-denied message). 6) Return to the Prepaid Card Management list; verify a new virtual prepaid card entry is present (count increased by 1). 7) Open the newly created virtual card; verify a card details view is displayed to the user. 8) Reload the list or navigate away and back; confirm the virtual card remains visible for the account. 9) Log out from the session and verify user is signed out.",
+    "expectedResult": "1) Tier 2 user is allowed to apply for a virtual prepaid card without restriction. 2) The new virtual prepaid card appears in the user's Prepaid Card Management list after submission and persists across view refresh. 3) No authorization error blocks Tier 2 during application.",
+    "sourceCitation": {
+      "location": "Section 4.2, US-201 (Lines L46-L50)",
+      "excerpt": "As a registered user (Tier 1 or Tier 2), I want to apply for a new virtual prepaid card so I can start making online purchases immediately."
+    },
+    "relatedUserStory": "US-201",
+    "userTier": "Tier 2",
+    "uiScreen": "Prepaid Card Management, Virtual Card Application",
+    "testData": "Login: tier2.tester+02@example.com / ****TestPwd02; Device: web or mobile test env.",
+    "tags": "access,authorization,prepaid,virtual-card,kyc-gating,ui",
+    "complianceNote": "Tier-based access: Virtual card permitted for Tier 2 per US-201",
+    "dataSetup": "Provision Tier 2 verified account with no virtual cards.",
+    "dataCleanup": "Delete or deactivate the created virtual card after test completion in test environment."
+  },
+  {
+    "type": "functional",
+    "title": "Tier 2 allowed to send international remittance",
+    "description": "Verifies Tier 2 (Verified) users can initiate and submit an international remittance and see the transfer recorded. Automation: HIGH (UI/API).",
+    "testId": "TC-ACCESS-05",
+    "testDescription": "A Tier 2 verified user signs in, navigates to the International Remittance feature, selects a saved beneficiary, enters a send amount, proceeds through review, and submits the transfer. The action must be allowed for Tier 2 users and a corresponding transfer record should be visible afterward.",
+    "severity": "Critical",
+    "priority": "P0",
+    "prerequisites": "1) Tier 2 user account exists (verified via completed KYC). 2) At least one saved beneficiary exists for this user (permitted by US-402). 3) Remittance service is enabled and reachable. 4) ASSUMPTION: Test account has sufficient balance to submit the test amount (exact balance not asserted).",
+    "stepsToPerform": "1) Launch the app and navigate to Login; enter tier2.tester+03@example.com and the test password; submit and verify successful login to the dashboard. 2) Open Profile and verify verification status shows 'Tier 2' to confirm correct access tier. 3) Navigate to the International Remittance section from the main menu; verify the 'Send money' flow is accessible. 4) On the send flow, select an existing saved beneficiary from the list; verify the beneficiary is selected. 5) Enter a send amount of 100.00 and continue; verify a review/confirmation screen is displayed prior to final submission. 6) Review the details and select Confirm/Send; verify the platform accepts the submission (no access-denied error). 7) Navigate to Remittance History; verify a new transfer record appears corresponding to the recent submission. 8) Verify the record shows a status label (e.g., Pending/Completed/Failed per the source) without asserting a specific outcome state. 9) Log out and verify the user is signed out.",
+    "expectedResult": "1) Tier 2 user can access the 'Send money' flow and submit an international remittance. 2) The submission is accepted by the system (no authorization failure due to tier). 3) A corresponding transfer record is visible in Remittance History immediately after submission with a valid status indicator.",
+    "sourceCitation": {
+      "location": "Section 4.3, US-401 (Lines L61-L65)",
+      "excerpt": "As a Tier 2 (Verified) user, I want to send money from my account to an international recipient so I can support my family abroad."
+    },
+    "relatedUserStory": "US-401",
+    "userTier": "Tier 2",
+    "uiScreen": "International Remittance, Send Flow; Remittance History",
+    "testData": "Login: tier2.tester+03@example.com / ****TestPwd03; Send amount: 100.00; Beneficiary (existing): 'Test Recipient' (synthetic), Country: 'TestCountry', Account/Mobile Money: '****1234'.",
+    "tags": "access,authorization,remittance,kyc-gating,ui",
+    "complianceNote": "KYC gating per US-401: sending money allowed for Tier 2 only",
+    "dataSetup": "Seed at least one beneficiary for the Tier 2 user prior to test.",
+    "dataCleanup": "None required; retain transfer record for audit in test environment."
   }
 ]
