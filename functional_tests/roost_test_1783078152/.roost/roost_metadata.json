@@ -1,0 +1,24 @@
+{
+  "project": {
+    "name": "roost_test_1783078152",
+    "created_at": "2026-07-03T11:45:54.217Z",
+    "updated_at": "2026-07-03T11:45:54.217Z"
+  },
+  "files": {
+    "input_files": [
+      {
+        "fileName": "roost_test_1783078152.txt",
+        "fileURI": "C:\\var\\tmp\\Roost\\RoostGPT\\tr-func-test-BSB-43553\\1783078152\\functional_tests\\roost_test_1783078152\\roost_test_1783078152.txt",
+        "fileSha": "cf83e1357e"
+      },
+      {
+        "fileName": "BSB-43553.txt",
+        "fileURI": "C:\\var\\tmp\\Roost\\RoostGPT\\tr-func-test-BSB-43553\\1783078152\\functional_tests\\roost_test_1783078152\\BSB-43553.txt",
+        "fileSha": "303175289e"
+      }
+    ]
+  },
+  "api_files": {
+    "input_files": []
+  }
+}
