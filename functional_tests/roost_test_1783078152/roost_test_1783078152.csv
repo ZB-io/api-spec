@@ -1,0 +1,21 @@
+BO user logs in and navigates to Payments List
+Create inward SWIFT file with correct details, capture ABA, and upload successfully
+File creation is blocked with incorrect/incomplete details until corrected
+Receipt is confirmed only after upload and is visible on Payments List
+Navigate to Workitem summary list and select the incoming SWIFT transfer
+Validation parameters are shown and status is 'Repair awaited' immediately after validation
+Specific validation failures enforce 'Repair awaited' until repaired, then authorization approves and transaction succeeds
+Item remains in 'Repair awaited status' across refresh until Modify is performed
+Authorization is not performed while status is 'Repair awaited status'
+Modify enables addressing specific fields to clear validations (pre-authorization)
+Attempt authorization, then repair via Modify, then authorize to approval (sequence integrity)
+Lifecycle order is enforced: Received → Repair awaited → Modify → Authorize → Successful
+MX message is present on Messages screen after successful transaction
+Branch login and customer selection is successful
+Demand account entry is absent before success and present after approval
+Mobile user login is successful
+Mobile transaction entry becomes visible only after success
+After success, refreshing Mobile transactions shows the SWIFT entry
+Payments List reflects received inward SWIFT messages post-upload
+Validation references include both 'Valid Beneficiary Account in IBAN format' and 'Valid Beneficiary Account'
+Success is confirmed after authorization and before navigating to Messages for MX audit
