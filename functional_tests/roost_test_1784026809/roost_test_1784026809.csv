@@ -1,0 +1,21 @@
+Environment readiness - MX messages enabled and core BO navigation accessible
+API - Create and upload inward SWIFT file, then verify message ingestion presence
+API - Workitem validations list includes required parameters
+BO user login and core navigation across Payments List, Messages, and Workitem summary
+Create inward SWIFT file with ABA and upload successfully
+Verify inward SWIFT message is received post-upload
+Navigate to Workitem summary and select incoming SWIFT transfer
+Verify required validations are present in Workitem
+Validation failure routes the item to Repair awaited and allows repair
+Initiate repair via Modify when in Repair awaited
+Repair, authorize, and confirm successful incoming SWIFT transaction
+Verify MX message presence under Service Indicator > Messages
+Branch user login and customer selection
+Verify SWIFT transaction entry is available in the customer demand account
+Mobile user login
+Verify SWIFT transaction entry is available in the mobile application
+End-to-end flow to Repair awaited in Workitem
+End-to-end repair via Modify and authorization to successful incoming SWIFT
+End-to-end confirmation of MX message presence under Messages
+Reconcile BO successful transaction with Branch demand account entry
+Reconcile BO successful transaction with Mobile transaction entry
