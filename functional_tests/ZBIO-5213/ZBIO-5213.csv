@@ -1,0 +1,22 @@
+Due Reminder generation and masking compliance for upcoming due accounts
+Overdue Balance Alert is sent only after the due date is missed
+Overdue Balance Alert masking compliance (digits only, exact four, no PAN)
+Overdue Balance Alert rejects invalid identifier lengths and accepts exactly four digits
+Collection agency involvement occurs only after no response to prior notifications and uses last four only
+Agency handoff artifact includes only the last four digits and no extended masked patterns
+Agency handoff identifier length validation (BVA)
+Agency handoff never includes full PAN and sanitizes injected long numeric sequences
+Legal action is initiated only for extreme non-payment/default and documents include only last four
+Legal documentation includes only the last four digits and no extended masked patterns
+Legal documentation identifier length validation (BVA)
+Legal documentation never displays full PAN and sanitizes injected long numeric sequences
+All communications include only the last four digits — per artifact type
+No communication or documentation displays the full PAN — per artifact type
+Exactly four numeric digits are present where the last-4 identifier is required (multi-artifact check)
+Inclusion of fewer than or more than four digits is invalid and rejected; exactly four is accepted
+Due Reminder is sent only for accounts with an upcoming due date
+Collection notification is not issued before significant delinquency; issued after with last four only
+Collection agency involvement is blocked without prior notifications and proceeds after recording no response
+Transition from significant delinquency to collection notification then to payment plan when unable to pay in full
+Collection notification is rejected if it includes more than the last 4 digits
+Collection notification never displays the full PAN in plain text
