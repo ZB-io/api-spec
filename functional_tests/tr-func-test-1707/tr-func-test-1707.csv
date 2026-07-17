@@ -1,0 +1,45 @@
+New user registration results in Tier 1 access and virtual card entry is accessible
+Registration enforces both email and password as required inputs
+Tier 1 user can log in and see profile Tier 1 status
+Tier 1 user is blocked from physical card order and can access virtual card application
+Tier 2 user can order a physical prepaid card
+KYC submission validation enforces eligible ID types and requires selfie
+KYC submission entry point visibility by user tier
+Profile displays Pending status after successful KYC submission
+Tier 1 user can apply for a new virtual prepaid card
+Tier 1 user can load funds from a linked bank account
+Successful top-up increases balance by $50 and creates a 'load' transaction
+Card balance is displayed to the user
+Recent transactions list is displayed with recognizable types
+Transaction History pagination boundary behavior
+Transaction type filter behavior for valid and invalid values
+Date range filtering narrows results to the selected period
+Combined filter of date range and type 'load' returns only in-range loads
+Filtered results paginate at 25-per-page when more than 25 matches exist
+Transaction type filter UI exposes exactly load, purchase, refund
+Clearing transaction type filter restores full paginated list at 25 per page
+Date range-only filtering still enforces 25-per-page pagination
+Blocking the card reflects immediately and persists across navigation and re-login
+Blocking the card prevents further top-up in the same session
+Card Details displays current balance, daily load limit, and remaining allowance together
+Daily load limit display shows $0 used with full remaining allowance
+After a $500 same-day load, used/limit shows "$500.00 / $2000.00 daily limit used"
+After a $2000 same-day load, used equals limit and remaining is $0.00
+Remaining allowance equals limit minus used after a $750 same-day load
+Used amount increases and remaining decreases accordingly after an additional top-up
+Tier 2 user can initiate send money and reach review step
+Tier 1 user cannot access Send Money; Tier 2 can
+Exchange rate and fees are shown before confirm and persist to confirmation step
+Remittance history is paginated and Next/Previous controls work across pages
+Remittance history displays Pending status for applicable transfers
+Only allowed statuses (Pending, Completed, Failed) appear in remittance history
+Exact status labels are rendered as 'Pending', 'Completed', 'Failed'
+Remittance history shows 25 items on page 1 and remaining on page 2 when total is 26
+Adding a beneficiary validates required Full Name and saves valid entries
+Deleting a previously saved beneficiary removes it from the list
+A saved beneficiary appears in the list and is selectable in the send flow
+End-to-end onboarding from registration through KYC submission to Pending status
+End-to-end: Apply virtual card, top-up, verify balance update, filter and paginate transactions
+End-to-end: Add beneficiary, send money with rate/fees preview, history shows allowed status
+Tier 1 direct navigation attempt to physical card order is denied
+A top-up creates a 'load' entry discoverable by type filter
